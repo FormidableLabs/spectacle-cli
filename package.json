@@ -9,8 +9,9 @@
   },
   "scripts": {
     "preversion": "yarn run check",
+    "start:mdx": "webpack-dev-server --port=3000 --hot --config examples/mdx/webpack.config.js",
     "lint": "eslint --ignore-path .gitignore .",
-    "check": "yarn run lint"
+    "check": "yarn lint"
   },
   "license": "MIT",
   "repository": {

@@ -1,6 +1,8 @@
 /*
 !/bin
 !/lib
+!/config
+!/webpack-mdx-loader
 !LICENSE
 !README.md
 !package.json
