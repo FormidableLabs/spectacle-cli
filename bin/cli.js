@@ -1,6 +1,8 @@
 #!/usr/bin/env node
+'use strict';
 
 const { parse } = require('./args');
+const { launchDevServer } = require('./actions');
 
 // const actions = require('./actions');
 
@@ -23,9 +25,20 @@ const { parse } = require('./args');
 // });
 
 const main = async () => {
-  const args = await parse();
+  const {
+    port,
+    title,
+    mdxFilePath,
+    themeFilePath
+  } = await parse();
 
-  console.log("TODO: HERE", { args });
+  // We only have one action so far.
+  await launchDevServer({
+    port,
+    title,
+    mdxFilePath,
+    themeFilePath
+  });
 };
 
 if (require.main === module) {

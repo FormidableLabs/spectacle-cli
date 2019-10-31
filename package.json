@@ -12,7 +12,7 @@
     "build-examples-loader-mdx": "webpack --config examples/loader-mdx/webpack.config.js",
     "build": "yarn build-examples-loader-mdx",
     "start:mdx": "webpack-dev-server --port=3000 --hot --config examples/loader-mdx/webpack.config.js",
-    "lint": "eslint --ignore-path .gitignore .",
+    "lint": "eslint .",
     "check": "yarn lint"
   },
   "license": "MIT",
@@ -27,7 +27,10 @@
     "eslint-config-formidable": "^3.0.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-filenames": "^1.2.0",
-    "eslint-plugin-import": "^2.9.0"
+    "eslint-plugin-import": "^2.9.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "prettier": "^1.18.2"
   },
   "dependencies": {
     "@babel/core": "^7.6.4",
