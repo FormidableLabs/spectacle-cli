@@ -9,6 +9,8 @@
   },
   "scripts": {
     "preversion": "yarn run check",
+    "build-examples-mdx": "webpack --config examples/mdx/webpack.config.js",
+    "build": "yarn build-examples-mdx",
     "start:mdx": "webpack-dev-server --port=3000 --hot --config examples/mdx/webpack.config.js",
     "lint": "eslint --ignore-path .gitignore .",
     "check": "yarn lint"
