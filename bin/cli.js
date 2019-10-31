@@ -2,7 +2,7 @@
 'use strict';
 
 const { parse } = require('./args');
-const { launchDevServer } = require('./actions');
+const { launchDevServer } = require('../lib/actions');
 
 const main = async () => {
   const { port, title, mdxFilePath, themeFilePath } = await parse();
