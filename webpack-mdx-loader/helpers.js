@@ -1,3 +1,5 @@
+'use strict';
+
 const mdx = require('@mdx-js/mdx');
 
 const EX_REG = /export\sdefault\s/g;

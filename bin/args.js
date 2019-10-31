@@ -56,6 +56,7 @@ const args = () =>
     .strict().argv;
 
 // Validate and further transform args.
+// eslint-disable-next-line max-statements
 const parse = async argv => {
   const { src, theme, port, title } = argv;
 
@@ -81,6 +82,7 @@ const parse = async argv => {
     }
 
     try {
+      // eslint-disable-next-line global-require
       themeFilePath = require(themeFilePath);
     } catch (err) {
       throw new Error(`Theme file "${themeFilePath}" could not be imported.`);

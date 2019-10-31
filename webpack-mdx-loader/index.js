@@ -1,3 +1,5 @@
+'use strict';
+
 const { getOptions } = require('loader-utils');
 const matter = require('gray-matter');
 const normalizeNewline = require('normalize-newline');
@@ -21,6 +23,7 @@ const SLIDE_REG = /\n---\n/;
 const SLIDE_TYPE = 'Slide';
 const NOTES_TYPE = 'Notes';
 
+// eslint-disable-next-line max-statements
 module.exports = async function(src) {
   const { data, content } = matter(src);
 
