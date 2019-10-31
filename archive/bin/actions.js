@@ -9,6 +9,7 @@ const options = {
 };
 
 // TODO: HERE -- start with this.
+// TODO: Just collapse into one server?
 const launchServer = (configUpdates = {}, port) => {
   const customConfig = { ...config, ...configUpdates };
   const server = new WebpackDevServer(webpack(customConfig), options);
@@ -27,6 +28,7 @@ const launchMDXServer = (mdxFilePath, themeFilePath, title, port = 3000) => {
     throw new Error('MDX file path must be provided.');
   }
 
+  // TODO: Figutre out what to do with these paths.
   const cliRoot = path.resolve(__dirname, '..');
   const absoluteMdxFilePath = path.resolve(mdxFilePath);
   const nodeModules = path.resolve(__dirname, '../node_modules');
