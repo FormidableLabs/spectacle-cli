@@ -13,7 +13,7 @@
     "build-examples-loader-mdx": "webpack --config examples/loader-mdx/webpack.config.js",
     "build-examples": "yarn build-examples-loader-mdx",
     "start:cli-mdx": "cd examples/cli-mdx && node ../../bin/cli.js",
-    "start:loader-mdx": "webpack-dev-server --port=3000 --hot --config examples/loader-mdx/webpack.config.js",
+    "start:loader-mdx": "webpack-dev-server --port=4000 --hot --config examples/loader-mdx/webpack.config.js",
     "lint": "eslint .",
     "check": "yarn lint"
   },
