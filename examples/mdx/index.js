@@ -1,10 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import slides from './slides.mdx';
-import { Deck, FlexBox, Slide, Box, Progress, FullScreen } from '../../src';
 import { MDXProvider } from '@mdx-js/react';
-import mdxComponentMap from '../../src/utils/mdx-component-mapper';
+// TODO: Real spectacle path
+import { Deck, FlexBox, Slide, Box, Progress, FullScreen, mdxComponentMap } from '../../../spectacle';
+
+import slides from './slides.mdx';
 
 const MDXTest = () => (
   <MDXProvider components={mdxComponentMap}>

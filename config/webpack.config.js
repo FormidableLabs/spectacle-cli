@@ -10,7 +10,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../dist'),
     pathinfo: true, // TODO: REMOVE
-    filename: 'spectacle.min.js' // TODO: Do a different name???
+    filename: 'deck.min.js' // TODO: Do a different name???
   },
   devtool: 'source-map',
   module: {
@@ -19,11 +19,21 @@ module.exports = {
         test: /\.jsx?$/,
         use: ['babel-loader']
       },
-      // TODO: MDX support.
+      {
+        test: /\.mdx?$/,
+        use: ['babel-loader', require.resolve('../webpack-mdx-loader')]
+      },
       {
         test: /\.(png|svg|jpg|gif)$/,
         use: ['file-loader']
       }
     ]
+  },
+  // TODO: Remove these once using real published spectacle
+  resolve: {
+    alias: {
+      react: require.resolve('react'),
+      'react-dom': require.resolve('react-dom')
+    }
   }
 };

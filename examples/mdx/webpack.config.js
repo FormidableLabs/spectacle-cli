@@ -1,7 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const base = require('../../webpack.config');
+const base = require('../../config/webpack.config');
 
 module.exports = {
   ...base,
@@ -12,7 +12,6 @@ module.exports = {
     path: path.join(__dirname, 'dist'),
     filename: 'example.js'
   },
-  externals: {},
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Spectacle MDX Development Example',
