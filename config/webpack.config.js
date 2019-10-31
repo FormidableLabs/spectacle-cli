@@ -25,11 +25,5 @@ module.exports = {
         use: ['file-loader']
       }
     ]
-  },
-  resolve: {
-    alias: {
-      // TODO: Figure out user theme thing.
-      // 'spectacle-user-theme': "TODO"
-    }
   }
 };

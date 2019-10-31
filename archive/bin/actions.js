@@ -8,6 +8,7 @@ const options = {
   hot: true
 };
 
+// TODO: HERE -- start with this.
 const launchServer = (configUpdates = {}, port) => {
   const customConfig = { ...config, ...configUpdates };
   const server = new WebpackDevServer(webpack(customConfig), options);
@@ -30,9 +31,12 @@ const launchMDXServer = (mdxFilePath, themeFilePath, title, port = 3000) => {
   const absoluteMdxFilePath = path.resolve(mdxFilePath);
   const nodeModules = path.resolve(__dirname, '../node_modules');
 
+  // TODO: Better handle MDX inputs.
   const alias = {
     'spectacle-user-mdx': absoluteMdxFilePath
   };
+
+  // TODO: Handle theme
   if (themeFilePath) {
     alias['spectacle-user-theme'] = path.resolve(themeFilePath);
   } else {
