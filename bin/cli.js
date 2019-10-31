@@ -25,12 +25,7 @@ const { launchDevServer } = require('./actions');
 // });
 
 const main = async () => {
-  const {
-    port,
-    title,
-    mdxFilePath,
-    themeFilePath
-  } = await parse();
+  const { port, title, mdxFilePath, themeFilePath } = await parse();
 
   // We only have one action so far.
   await launchDevServer({

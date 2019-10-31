@@ -1,19 +1,22 @@
 'use strict';
 
-const fs = require("fs");
-const path = require("path");
-const { promisify } = require("util");
+const fs = require('fs');
+const path = require('path');
+const { promisify } = require('util');
 
 const yargs = require('yargs');
 
 // Helpers
 const stat = promisify(fs.stat);
-const exists = (filePath) => stat(filePath)
-  .then(() => true)
-  .catch((err) => {
-    if (err.code === "ENOENT") { return false; }
-    throw err;
-  });
+const exists = filePath =>
+  stat(filePath)
+    .then(() => true)
+    .catch(err => {
+      if (err.code === 'ENOENT') {
+        return false;
+      }
+      throw err;
+    });
 
 // Produce args object.
 const args = () =>
@@ -50,16 +53,17 @@ const args = () =>
     .alias('help', 'h')
     .version()
     .alias('version', 'v')
-    .strict()
-    .argv;
+    .strict().argv;
 
 // Validate and further transform args.
-const parse = async (argv) => {
+const parse = async argv => {
   const { src, theme, port, title } = argv;
 
   // Source. Relative to CWD.
   if (!/\.mdx?$/.test(src)) {
-    throw new Error(`Only .md,.mdx files are supported for --src. Found: "${src}"`);
+    throw new Error(
+      `Only .md,.mdx files are supported for --src. Found: "${src}"`
+    );
   }
   const mdxFilePath = path.resolve(src);
   const srcExists = await exists(mdxFilePath);

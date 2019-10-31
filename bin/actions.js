@@ -1,12 +1,7 @@
-"use strict";
+'use strict';
 
-const launchDevServer = async ({
-  port,
-  title,
-  mdxFilePath,
-  themeFilePath
-}) => {
-  console.log("TODO HERE DEV SERVER", {
+const launchDevServer = async ({ port, title, mdxFilePath, themeFilePath }) => {
+  console.log('TODO HERE DEV SERVER', {
     port,
     title,
     mdxFilePath,

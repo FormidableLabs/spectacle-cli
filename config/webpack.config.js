@@ -6,7 +6,7 @@ const path = require('path');
 
 module.exports = {
   mode: 'development', // TODO: Adjust for production.
-  entry: null,  // TODO: Leave blank?
+  entry: null, // TODO: Leave blank?
   output: {
     path: path.resolve(__dirname, '../dist'),
     pathinfo: true, // TODO: REMOVE

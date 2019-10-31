@@ -91,7 +91,7 @@ import React from 'react'
 import { mdx } from '@mdx-js/react'
 ${modules.join('\n')}
 ${inlineModules
-  .filter(function(el, i, arr) {
+  .filter((el, i, arr) => {
     return arr.indexOf(el) === i;
   })
   .join('\n')}\n\n`;
@@ -100,7 +100,7 @@ ${inlineModules
    * Add in the slide component definitions. Keep track of the component names.
    */
   slides.forEach((s, i) => {
-    allCode += s + '\n\n';
+    allCode += `${s}\n\n`;
     slideWrapperNames.push(nameForComponent(i, SLIDE_TYPE));
   });
 
@@ -108,7 +108,7 @@ ${inlineModules
    * Add in the notes component definitions. Keep track of the component names.
    */
   notes.forEach((n, i) => {
-    allCode += n + '\n\n';
+    allCode += `${n}\n\n`;
     noteWrapperNames.push(nameForComponent(i, NOTES_TYPE));
   });
 
