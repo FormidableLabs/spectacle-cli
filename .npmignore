@@ -3,7 +3,7 @@
 !/lib
 !/config
 !/webpack-mdx-loader
-!LICENSE
+!LICENSE.txt
 !README.md
 !package.json
 !index.d.ts
