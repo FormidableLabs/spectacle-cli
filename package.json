@@ -9,8 +9,10 @@
   },
   "scripts": {
     "preversion": "yarn run check",
+    "build-examples-cli-mdx": "echo TODO_BUILD_CLI",
     "build-examples-loader-mdx": "webpack --config examples/loader-mdx/webpack.config.js",
-    "build": "yarn build-examples-loader-mdx",
+    "build-examples": "yarn build-examples-loader-mdx",
+    "start:cli-mdx": "cd examples/cli-mdx && node ../../bin/cli.js",
     "start:loader-mdx": "webpack-dev-server --port=3000 --hot --config examples/loader-mdx/webpack.config.js",
     "lint": "eslint .",
     "check": "yarn lint"
