@@ -1,16 +1,18 @@
 const yargs = require('yargs');
-const validatePresentationMode = require('./validate/presentation-mode');
 
-const validate = async parser => {
-  const { argv } = parser;
-  const { src, theme, port, title } = argv;
+// TODO: RE-INTEGRATE
+// const validatePresentationMode = require('./validate/presentation-mode');
+//
+// const validate = async parser => {
+//   const { argv } = parser;
+//   const { src, theme, port, title } = argv;
 
-  return await validatePresentationMode(src, theme, port, title);
-};
+//   return await validatePresentationMode(src, theme, port, title);
+// };
 
 const args = () =>
   yargs
-    .usage(`Usage: spectacle -s <file>`)
+    .usage('Usage: spectacle -s <file>')
 
     // MDX File
     .option('src', {
@@ -40,8 +42,9 @@ const args = () =>
     .alias('help', 'h')
     .version()
     .alias('version', 'v')
-    .strict();
+    .strict()
+    .argv;
 
 module.exports = {
-  parse: () => validate(args())
+  parse: () => Promise.resolve(args())
 };
