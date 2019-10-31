@@ -2,7 +2,6 @@
   "name": "spectacle-cli",
   "version": "0.0.1",
   "description": "CLI for the Spectacle Presentation Framework",
-  "main": "lib/index.js",
   "bin": {
     "spectacle": "./bin/cli.js",
     "spectacle-cli": "./bin/cli.js"
