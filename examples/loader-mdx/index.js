@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 
 import { MDXProvider } from '@mdx-js/react';
-// TODO: Real spectacle path
+
 import {
   Deck,
   FlexBox,
@@ -11,7 +11,7 @@ import {
   Progress,
   FullScreen,
   mdxComponentMap
-} from '../../../spectacle';
+} from 'spectacle';
 
 import slides from './slides.mdx';
 
