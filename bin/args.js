@@ -6,6 +6,9 @@ const { promisify } = require('util');
 
 const yargs = require('yargs');
 
+const actions = require('../lib/actions');
+const ACTIONS = Object.keys(actions);
+
 // Helpers
 const stat = promisify(fs.stat);
 const exists = filePath =>
@@ -24,6 +27,12 @@ const args = () =>
     .usage('Usage: spectacle -s <file>')
 
     // Substantive
+    .option('action', {
+      alias: 'a',
+      describe: `CLI action to run (${ACTIONS.join(', ')})`,
+      default: 'server',
+      type: 'string'
+    })
     .option('src', {
       alias: 's',
       describe: 'Path to a file from which a presentation will be generated.',
@@ -58,7 +67,12 @@ const args = () =>
 // Validate and further transform args.
 // eslint-disable-next-line max-statements
 const parse = async argv => {
-  const { src, theme, port, title } = argv;
+  const { action, src, theme, port, title } = argv;
+
+  // Action.
+  if (!actions[action]) {
+    throw new Error(`Unknown action: "${action}"`);
+  }
 
   // Source. Relative to CWD.
   if (!/\.mdx?$/.test(src)) {
@@ -83,6 +97,7 @@ const parse = async argv => {
   }
 
   return {
+    action,
     port,
     title,
     srcFilePath,
