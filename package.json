@@ -11,7 +11,7 @@
     "build-examples-cli-mdx": "echo TODO_BUILD_CLI",
     "build-examples-loader-mdx": "webpack --config examples/loader-mdx/webpack.config.js",
     "build-examples": "yarn build-examples-loader-mdx",
-    "start:cli-mdx": "cd examples/cli-mdx && node ../../bin/cli.js",
+    "start:cli-mdx": "cd examples/cli-mdx && node ../../bin/cli.js -l \"Spectacle CLI + MDX Example\"",
     "start:loader-mdx": "webpack-dev-server --port=4000 --hot --config examples/loader-mdx/webpack.config.js",
     "lint": "eslint .",
     "check": "yarn lint",
