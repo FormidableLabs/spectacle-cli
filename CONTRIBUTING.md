@@ -23,7 +23,7 @@ We have various deck scenarios in `examples` that are part of the development pr
 
 #### `examples/cli-mdx-babel`
 
-A CLI build using MDX slides found in `examples/cli-mdx-babel/slides.mdx` as well as a `.babelrc` to permit JSX content in the MDX slides
+A CLI build using MDX slides found in `examples/cli-mdx-babel/slides.mdx` as well as a `.babelrc` to permit JSX content in the MDX slides and a custom theme found at `examples/cli-mdx-babel/theme.js`.
 
 ```sh
 # In one terminal open CLI dev server
@@ -33,9 +33,22 @@ $ yarn start:cli-mdx-babel
 $ open http://localhost:3000/
 ```
 
+
+#### `examples/cli-mdx-babel`
+
+A CLI build using vanilla Markdown slides found in `examples/cli-md/slides.md`.
+
+```sh
+# In one terminal open CLI dev server
+$ yarn start:cli-md
+
+# In another open a browser to 3001
+$ open http://localhost:3001/
+```
+
 #### `examples/loader-mdx`
 
-A vanilla webpack build using MDX slides found in `examples/loader-mdx/slides.mdx`:
+A vanilla webpack build using MDX slides found in `examples/loader-mdx/slides.mdx`.
 
 ```sh
 # In one terminal open webpack dev server
