@@ -43,7 +43,14 @@ module.exports = {
     // in a user deck.
     alias: Object.keys(dependencies)
       // Remove node-only prod deps.
-      .filter(dep => !(dep.startsWith('webpack') || dep.endsWith('loader')))
+      .filter(
+        dep =>
+          !(
+            dep.startsWith('@babel') ||
+            dep.startsWith('webpack') ||
+            dep.endsWith('loader')
+          )
+      )
       // Create alias object.
       .reduce((memo, dep) => ({ ...memo, [dep]: require.resolve(dep) }), {})
   }
