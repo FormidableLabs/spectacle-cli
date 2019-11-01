@@ -8,10 +8,10 @@
   },
   "scripts": {
     "preversion": "yarn run check",
-    "build-examples-cli-mdx": "echo TODO_BUILD_CLI",
+    "build-examples-cli-mdx-babel": "echo TODO_BUILD_CLI",
     "build-examples-loader-mdx": "webpack --config examples/loader-mdx/webpack.config.js",
-    "build-examples": "yarn build-examples-loader-mdx",
-    "start:cli-mdx": "cd examples/cli-mdx && node ../../bin/cli.js -l \"Spectacle CLI + MDX Example\"",
+    "build-examples": "yarn build-examples-cli-mdx-babel && yarn build-examples-loader-mdx",
+    "start:cli-mdx-babel": "cd examples/cli-mdx-babel && node ../../bin/cli.js -l \"Spectacle CLI + MDX Example\"",
     "start:loader-mdx": "webpack-dev-server --port=4000 --hot --config examples/loader-mdx/webpack.config.js",
     "lint": "eslint .",
     "check": "yarn lint",

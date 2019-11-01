@@ -21,13 +21,13 @@ We have various deck scenarios in `examples` that are part of the development pr
 - `examples/cli-{NAME}`: Test the CLI dev server.
 - `examples/loader-{NAME}`: Test a straight webpack build with `webpack-mdx-loader`.
 
-#### `examples/cli-mdx`
+#### `examples/cli-mdx-babel`
 
-A CLI build using MDX slides found in `examples/cli-mdx/slides.mdx`:
+A CLI build using MDX slides found in `examples/cli-mdx-babel/slides.mdx` as well as a `.babelrc` to permit JSX content in the MDX slides
 
 ```sh
 # In one terminal open CLI dev server
-$ yarn start:cli-mdx
+$ yarn start:cli-mdx-babel
 
 # In another open a browser to 3000
 $ open http://localhost:3000/
