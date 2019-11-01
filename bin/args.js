@@ -80,13 +80,6 @@ const parse = async argv => {
     if (!themeExists) {
       throw new Error(`Theme file "${themeFilePath}" not found.`);
     }
-
-    try {
-      // eslint-disable-next-line global-require
-      themeFilePath = require(themeFilePath);
-    } catch (err) {
-      throw new Error(`Theme file "${themeFilePath}" could not be imported.`);
-    }
   }
 
   return {
