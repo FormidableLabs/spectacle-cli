@@ -24,6 +24,7 @@ The Spectacle CLI will create a development server to create a `.md` or `.mdx` s
 *Note*: all paths are relative to current working directory (`process.cwd()`).
 
 ```sh
+$ spectacle -h
 Usage: spectacle -s <file>
 
 Options:
