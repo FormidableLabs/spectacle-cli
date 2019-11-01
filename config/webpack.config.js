@@ -16,18 +16,20 @@ module.exports = {
   },
   devtool: 'source-map',
   module: {
+    // Not we use `require.resolve` to make sure to use the loader installed
+    // within _this_ project's `node_modules` traversal tree.
     rules: [
       {
         test: /\.jsx?$/,
-        use: ['babel-loader']
+        use: ['babel-loader'].map(require.resolve)
       },
       {
         test: /\.mdx?$/,
-        use: ['babel-loader', require.resolve('../webpack-mdx-loader')]
+        use: ['babel-loader', '../webpack-mdx-loader'].map(require.resolve)
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader']
+        use: ['file-loader'].map(require.resolve)
       }
     ]
   }
