@@ -32,5 +32,13 @@ module.exports = {
         use: ['file-loader'].map(require.resolve)
       }
     ]
+  },
+  resolve: {
+    // TODO: Review if we actually need these aliases to avoid the dreaded
+    // "two reacts" problem (`Invalid hook call. Hooks can only be called ...`).
+    alias: {
+      react: require.resolve('react'),
+      'react-dom': require.resolve('react-dom')
+    }
   }
 };
