@@ -2,9 +2,9 @@
 
 These slides are bare Markdown with nothing special.
 
-- one
-- two
-- three
+- `one`
+- "two"
+- 'three'
 
 ---
 
