@@ -66,10 +66,10 @@ const parse = async argv => {
       `Only .md,.mdx files are supported for --src. Found: "${src}"`
     );
   }
-  const mdxFilePath = path.resolve(src);
-  const srcExists = await exists(mdxFilePath);
+  const srcFilePath = path.resolve(src);
+  const srcExists = await exists(srcFilePath);
   if (!srcExists) {
-    throw new Error(`Source file "${mdxFilePath}" not found.`);
+    throw new Error(`Source file "${srcFilePath}" not found.`);
   }
 
   // Theme. Relative to CWD.
@@ -92,7 +92,7 @@ const parse = async argv => {
   return {
     port,
     title,
-    mdxFilePath,
+    srcFilePath,
     themeFilePath
   };
 };
