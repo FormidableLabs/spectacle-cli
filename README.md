@@ -36,6 +36,7 @@ Options:
                                               [string] [default: "Presentation"]
   --port, -p     Port for running the Spectacle development server.
                                                         [number] [default: 3000]
+  --output, -o   Output directory for built files.    [string] [default: "dist"]
   --help, -h     Show help                                             [boolean]
   --version, -v  Show version number                                   [boolean]
 ```

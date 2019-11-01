@@ -30,14 +30,5 @@ module.exports = {
         use: ['file-loader']
       }
     ]
-  },
-  // TODO: Remove these once using real published spectacle
-  resolve: {
-    alias: {
-      react: require.resolve('react'),
-      'react-dom': require.resolve('react-dom'),
-      // TODO: Sibling git repository hack. Replace with real spectacle.
-      spectacle: require.resolve('../../spectacle')
-    }
   }
 };
