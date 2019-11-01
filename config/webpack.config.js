@@ -1,6 +1,7 @@
 'use strict';
 
 const path = require('path');
+const { dependencies } = require('../package.json');
 
 /**
  * Base configuration for the CLI, core, and examples.
@@ -35,10 +36,15 @@ module.exports = {
   },
   resolve: {
     // TODO: Review if we actually need these aliases to avoid the dreaded
-    // "two reacts" problem (`Invalid hook call. Hooks can only be called ...`).
-    alias: {
-      react: require.resolve('react'),
-      'react-dom': require.resolve('react-dom')
-    }
+    // "two reacts" problem (`Invalid hook call. Hooks can only be called ...`)
+    // and other resolution issue.
+    //
+    // Use all of the CLIs production dependencies over anything else found
+    // in a user deck.
+    alias: Object.keys(dependencies)
+      // Remove node-only prod deps.
+      .filter(dep => !(dep.startsWith('webpack') || dep.endsWith('loader')))
+      // Create alias object.
+      .reduce((memo, dep) => ({ ...memo, [dep]: require.resolve(dep) }), {})
   }
 };
