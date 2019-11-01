@@ -2,13 +2,12 @@
 'use strict';
 
 const { parse } = require('./args');
-const { server } = require('../lib/actions');
+const actions = require('../lib/actions');
 
 const main = async () => {
-  const { port, title, srcFilePath, themeFilePath } = await parse();
-
-  // We only have one action so far.
-  await server({ port, title, srcFilePath, themeFilePath });
+  const { action, port, title, srcFilePath, themeFilePath } = await parse();
+  const run = actions[action];
+  await run({ port, title, srcFilePath, themeFilePath });
 };
 
 if (require.main === module) {

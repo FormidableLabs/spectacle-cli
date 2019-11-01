@@ -56,6 +56,12 @@ const args = () =>
       type: 'number',
       default: 3000
     })
+    .option('output', {
+      alias: 'o',
+      describe: 'Output directory for built files.',
+      type: 'string',
+      default: 'dist'
+    })
 
     // Logistical
     .help()
