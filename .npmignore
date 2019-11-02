@@ -1,7 +1,10 @@
 /*
 !/bin
 !/lib
-!LICENSE
+!/config
+!/webpack-mdx-loader
+!LICENSE.txt
 !README.md
 !package.json
-!index.d.ts
+.eslint*
+

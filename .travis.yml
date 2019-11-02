@@ -1,0 +1,26 @@
+language: node_js
+
+node_js:
+  - "8"
+  - "10"
+  - "12"
+
+branches:
+  only:
+    - master
+
+install:
+  # Fail if lockfile outdated.
+  # https://yarnpkg.com/lang/en/docs/cli/install/#toc-yarn-install-frozen-lockfile
+  - yarn install --frozen-lockfile
+
+notifications:
+  email:
+    on_success: change
+    on_failure: always
+
+script:
+  # Build all examples to make sure they're not broken.
+  - yarn build-examples
+  # All other checks.
+  - yarn run check-ci

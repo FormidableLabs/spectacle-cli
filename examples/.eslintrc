@@ -1,0 +1,16 @@
+---
+extends:
+  - formidable/configurations/es6-react
+  - prettier
+
+plugins:
+  - prettier
+
+rules:
+  quotes: ["error", "single", { allowTemplateLiterals: true }]
+  object-property-newline: ["error", { allowAllPropertiesOnSameLine: true }]
+  prettier/prettier: "error"
+
+settings:
+  react:
+    version: "detect"
