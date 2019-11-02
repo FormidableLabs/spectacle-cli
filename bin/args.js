@@ -50,6 +50,18 @@ const args = () =>
       type: 'string',
       default: 'Presentation'
     })
+    .option('autoLayout', {
+      alias: 'f',
+      describe: 'Uses a align-items center layout using flex for all sides.',
+      type: 'boolean',
+      default: false
+    })
+    .option('template', {
+      alias: 'q',
+      describe:
+        'The path for a template file that gets included on each slide.',
+      type: 'string'
+    })
     .option('port', {
       alias: 'p',
       describe: 'Port for running the Spectacle development server.',
@@ -73,7 +85,7 @@ const args = () =>
 // Validate and further transform args.
 // eslint-disable-next-line max-statements
 const parse = async argv => {
-  const { action, src, theme, port, title } = argv;
+  const { action, src, theme, port, title, autoLayout, template } = argv;
 
   // Action.
   if (!actions[action]) {
@@ -102,12 +114,23 @@ const parse = async argv => {
     }
   }
 
+  let templateFilePath;
+  if (template) {
+    templateFilePath = path.resolve(template);
+    const templateExists = await exists(templateFilePath);
+    if (!templateExists) {
+      throw new Error(`Template file "${templateFilePath}" not found.`);
+    }
+  }
+
   return {
     action,
     port,
     title,
     srcFilePath,
-    themeFilePath
+    themeFilePath,
+    templateFilePath,
+    autoLayout
   };
 };
 
