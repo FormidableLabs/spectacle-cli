@@ -58,7 +58,7 @@ module.exports = {
         dep =>
           !(
             dep.startsWith('@babel') ||
-            dep.startsWith('webpack') ||
+            dep.indexOf('webpack') > -1 ||
             dep.endsWith('loader')
           )
       )

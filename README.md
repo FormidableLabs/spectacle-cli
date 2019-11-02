@@ -60,7 +60,7 @@ For `.mdx` source files, things are slightly more complicated.
 
 **Babel**: MDX produces JSX, not JS and can contain arbitrary JavaScript code along with imports. `spectacle-cli` thus has a built in babel transform of `@babel/preset-react`. If your JS/JSX enhancements in an MDX deck require more babel libraries than that, you will need to create a `.babelrc` and install dependencies in your current working directory (or above) from where you are running the CLI.
 
-**Dependencies**: `spectacle-cli` ships with some built-in dependencies that are `resolve.alias`-ed in webpack to always be used. For example, we include `react`, `react-dom`, and (of course) the `spectacle` core library. Your JS/JSX custom code used with MDX can automatically use these. For additional dependencies, please make sure to install dependencies in your current working directory (or above) from where you are running the CLI.
+**Dependencies**: `spectacle-cli` ships with some built-in dependencies that are `resolve.alias`-ed in webpack to always be used. For example, we include `react`, `react-dom`, and (of course) the `spectacle` core library. See this projects `package.json:dependencies` for the full list. Your JS/JSX custom code used with MDX can automatically use these. For additional dependencies, please make sure to install dependencies in your current working directory (or above) from where you are running the CLI.
 
 You can find a working example in `examples/cli-mdx-babel` in the project repository that contains a custom `.babelrc` that adds the `babel-plugin-codgen` neato features and has a custom slide that uses built-in `spectacle` components.
 
