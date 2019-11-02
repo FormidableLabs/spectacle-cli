@@ -1,4 +1,7 @@
+// `react`, `react-dom`, and `spectacle` are already provided as built-in dependencies.
 import React from 'react';
+
+// Other things like `prop-types` are not and must be separately available in the import path.
 import PropTypes from 'prop-types';
 
 const Test = ({ height }) => {

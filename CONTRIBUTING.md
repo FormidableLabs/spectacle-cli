@@ -33,6 +33,18 @@ $ yarn start:cli-mdx
 $ open http://localhost:3000/
 ```
 
+#### `examples/cli-mdx-babel`
+
+A CLI build using MDX slides found in `examples/cli-mdx/slides.mdx`, a custom `.babelrc` for additional functionality beyond `@babel/preset-react`, and a `Spectacle`-customized slide import.
+
+```sh
+# In one terminal open CLI dev server
+$ yarn start:cli-mdx-babel
+
+# In another open a browser to 3001
+$ open http://localhost:3001/
+```
+
 #### `examples/cli-md`
 
 A CLI build using vanilla Markdown slides found in `examples/cli-md/slides.md`.
@@ -41,8 +53,8 @@ A CLI build using vanilla Markdown slides found in `examples/cli-md/slides.md`.
 # In one terminal open CLI dev server
 $ yarn start:cli-md
 
-# In another open a browser to 3001
-$ open http://localhost:3001/
+# In another open a browser to 3100
+$ open http://localhost:3100/
 ```
 
 #### `examples/loader-mdx`
