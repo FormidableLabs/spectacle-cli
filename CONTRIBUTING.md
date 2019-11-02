@@ -71,7 +71,7 @@ $ open http://localhost:4000/
 
 ### Testing
 
-@TODO
+@TODO(3) https://github.com/FormidableLabs/spectacle-cli/issues/3
 
 ### Linting and Formatting
 
