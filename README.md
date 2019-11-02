@@ -21,8 +21,6 @@ $ yarn global add spectacle-cli
 
 The Spectacle CLI will create a development server to create a `.md` or `.mdx` slides-based deck with additional enhancements for theme overrides, etc.
 
-*Note*: all paths are relative to current working directory (`process.cwd()`).
-
 ```sh
 $ spectacle -h
 Usage: spectacle -s <file>
@@ -43,16 +41,28 @@ Options:
 
 Some additional tips:
 
+* _File paths_: all file paths are relative to current working directory (`process.cwd()`) or can be absolute.
 * `-a|--action`:
     * `server`: Run a development in-memory web-server with hot reload for your presentation.
     * `build`: Output a full production website static build to the `-o|--output` directory.
-* `-s|--src`: Source files are relative to current working directory (`process.cwd()`) or can be absolute. If a file has a `.md` suffix is processed as straight Markdown. If a file has a `.mdx` suffix it is processed as enhanced MDX.
+* `-s|--src`: The slide source file path. If a file has a `.md` suffix is processed as straight Markdown. If a file has a `.mdx` suffix it is processed as enhanced MDX.
 * `-t|--theme`: A `require|import`-able file (e.g., `.js` or `.json`) that contains an object to override the Spectacle default theme in places.
 
 ## Details
 
-@TODO: `.mdx` vs. `.md` and babel stuff.
+### Markdown
 
+For `.md` source files, everything is pretty straightforward -- the Markdown is parsed into Spectacle components and rendered as a deck. Slides are separated with `---`. You can find a working example in `examples/cli-md` in the project repository.
+
+### MDX
+
+For `.mdx` source files, things are slightly more complicated.
+
+**Babel**: MDX produces JSX, not JS and can contain arbitrary JavaScript code along with imports. `spectacle-cli` thus has a built in babel transform of `@babel/preset-react`. If your JS/JSX enhancements in an MDX deck require more babel libraries than that, you will need to create a `.babelrc` and install dependencies in your current working directory (or above) from where you are running the CLI.
+
+**Dependencies**: `spectacle-cli` ships with some built-in dependencies that are `resolve.alias`-ed in webpack to always be used. For example, we include `react`, `react-dom`, and (of course) the `spectacle` core library. Your JS/JSX custom code used with MDX can automatically use these. For additional dependencies, please make sure to install dependencies in your current working directory (or above) from where you are running the CLI.
+
+You can find a working example in `examples/cli-mdx-babel` in the project repository that contains a custom `.babelrc` that adds the `babel-plugin-codgen` neato features and has a custom slide that uses built-in `spectacle` components.
 
 [npm_img]: https://badge.fury.io/js/spectacle-cli.svg
 [npm_site]: http://badge.fury.io/js/spectacle-cli
