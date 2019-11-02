@@ -35,7 +35,7 @@ $ open http://localhost:3000/
 
 #### `examples/cli-mdx-babel`
 
-A CLI build using MDX slides found in `examples/cli-mdx/slides.mdx`, a custom `.babelrc` for additional functionality beyond `@babel/preset-react`, and a `Spectacle`-customized slide import.
+A CLI build using MDX slides found in `examples/cli-mdx-babel/slides.mdx`, a custom `.babelrc` for additional functionality beyond `@babel/preset-react`, and a `Spectacle`-customized slide import.
 
 ```sh
 # In one terminal open CLI dev server
