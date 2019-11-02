@@ -23,7 +23,7 @@ We have various deck scenarios in `examples` that are part of the development pr
 
 #### `examples/cli-mdx`
 
-A CLI build using MDX slides found in `examples/cli-mdx/slides.mdx` as well as a `.babelrc` to permit JSX content in the MDX slides and a custom theme found at `examples/cli-mdx/theme.js`.
+A CLI build using MDX slides found in `examples/cli-mdx/slides.mdx` and a custom theme found at `examples/cli-mdx/theme.js`.
 
 ```sh
 # In one terminal open CLI dev server
@@ -32,7 +32,6 @@ $ yarn start:cli-mdx
 # In another open a browser to 3000
 $ open http://localhost:3000/
 ```
-
 
 #### `examples/cli-md`
 

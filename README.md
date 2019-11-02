@@ -49,6 +49,11 @@ Some additional tips:
 * `-s|--src`: Source files are relative to current working directory (`process.cwd()`) or can be absolute. If a file has a `.md` suffix is processed as straight Markdown. If a file has a `.mdx` suffix it is processed as enhanced MDX.
 * `-t|--theme`: A `require|import`-able file (e.g., `.js` or `.json`) that contains an object to override the Spectacle default theme in places.
 
+## Details
+
+@TODO: `.mdx` vs. `.md` and babel stuff.
+
+
 [npm_img]: https://badge.fury.io/js/spectacle-cli.svg
 [npm_site]: http://badge.fury.io/js/spectacle-cli
 [trav_img]: https://api.travis-ci.com/FormidableLabs/spectacle-cli.svg

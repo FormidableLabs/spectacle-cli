@@ -3,17 +3,28 @@
 const path = require('path');
 const { dependencies } = require('../package.json');
 
+// Customized babel loader with the minimum we need to get `mdx` libraries
+// working, which unfortunately codegen JSX instead of JS.
+const babelLoader = {
+  loader: require.resolve('babel-loader'),
+  options: {
+    // Use user-provided .babelrc
+    babelrc: true,
+    // ... with some additional needed options.
+    presets: [require.resolve('@babel/preset-react')]
+  }
+};
+
 /**
  * Base configuration for the CLI, core, and examples.
  */
 
 module.exports = {
   mode: 'development',
-  entry: null, // TODO: Leave blank?
+  entry: null,
   output: {
-    path: path.resolve(__dirname, '../dist'),
-    pathinfo: true, // TODO: REMOVE
-    filename: 'deck.min.js' // TODO: Do a different name???
+    path: path.resolve('dist'),
+    filename: 'deck.js'
   },
   devtool: 'source-map',
   module: {
@@ -22,15 +33,15 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        use: ['babel-loader'].map(require.resolve)
+        use: [babelLoader]
       },
       {
         test: /\.mdx?$/,
-        use: ['babel-loader', '../webpack-mdx-loader'].map(require.resolve)
+        use: [babelLoader, require.resolve('../webpack-mdx-loader')]
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
-        use: ['file-loader'].map(require.resolve)
+        use: [require.resolve('file-loader')]
       }
     ]
   },
