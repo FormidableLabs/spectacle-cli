@@ -12,7 +12,6 @@ const main = async () => {
     srcFilePath,
     themeFilePath,
     templateFilePath,
-
     autoLayout
   } = await parse();
   const run = actions[action];
