@@ -46,9 +46,11 @@ module.exports = {
     ]
   },
   resolve: {
-    // TODO: Review if we actually need these aliases to avoid the dreaded
+    // TODO(2): Review if we actually need these aliases to avoid the dreaded
     // "two reacts" problem (`Invalid hook call. Hooks can only be called ...`)
     // and other resolution issue.
+    // https://github.com/FormidableLabs/spectacle-cli/issues/2
+    //
     //
     // Use all of the CLIs production dependencies over anything else found
     // in a user deck.
