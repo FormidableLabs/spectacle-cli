@@ -86,6 +86,9 @@ $ yarn lint-fix
 
 Thanks for taking the time to help us make Spectacle even better! Before you go ahead and submit a PR, make sure that you have done the following:
 
+- Consider if your changes should be incorporated in one or more `examples/*` scenarios. Like a new feature, option, etc. Let's try out everything we add!
+- Add an `## UNRELEASED` `CHANGELOG.md` entry for later publishing ease.
+- Check if the usage for `README.md` changes by executing `$ node bin/cli.js -h` and potentially updating.
 - Check that all of the examples build: `yarn build-examples`.
 - Run all checks using `yarn run check`
 
