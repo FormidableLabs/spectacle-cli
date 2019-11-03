@@ -2,9 +2,10 @@
  * Custom template overrides.
  */
 import { createElement } from 'react';
-import { FlexBox, Box, Progress, FullScreen } from 'spectacle';
+import { FlexBox, Text } from 'spectacle';
+const logo = './formidable.png';
 
-const template = () =>
+const template = ({ numberOfSlides, slideNumber }) =>
   createElement(
     FlexBox,
     {
@@ -13,18 +14,26 @@ const template = () =>
       bottom: 0,
       width: 1
     },
-    [
-      createElement(
-        Box,
-        { padding: 10, key: 'progress-templ' },
-        createElement(Progress)
-      ),
-      createElement(
-        Box,
-        { padding: 10, key: 'fullscreen-templ' },
-        createElement(FullScreen)
-      )
-    ]
+    createElement('img', {
+      src: logo,
+      style: {
+        width: 108,
+        height: 60,
+        padding: 40
+      }
+    }),
+    createElement(
+      Text,
+      {
+        fontSize: 16,
+        color: 'quinary',
+        fontWeight: 'bold'
+      },
+      'Slide ',
+      slideNumber + 1,
+      ' of ',
+      numberOfSlides
+    )
   );
 
 export default template;
