@@ -5,9 +5,24 @@ const { parse } = require('./args');
 const actions = require('../lib/actions');
 
 const main = async () => {
-  const { action, port, title, srcFilePath, themeFilePath } = await parse();
+  const {
+    action,
+    port,
+    title,
+    srcFilePath,
+    themeFilePath,
+    templateFilePath,
+    autoLayout
+  } = await parse();
   const run = actions[action];
-  await run({ port, title, srcFilePath, themeFilePath });
+  await run({
+    port,
+    title,
+    srcFilePath,
+    themeFilePath,
+    templateFilePath,
+    autoLayout
+  });
 };
 
 if (require.main === module) {
