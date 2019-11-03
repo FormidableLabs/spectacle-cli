@@ -20,8 +20,8 @@ const main = async () => {
     title,
     srcFilePath,
     themeFilePath,
-    autoLayout,
-    templateFilePath
+    templateFilePath,
+    autoLayout
   });
 };
 
