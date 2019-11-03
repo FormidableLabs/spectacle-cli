@@ -5328,10 +5328,10 @@ spdy@^4.0.1:
     select-hose "^2.0.0"
     spdy-transport "^3.0.0"
 
-spectacle@6.0.0-alpha.1:
-  version "6.0.0-alpha.1"
-  resolved "https://registry.yarnpkg.com/spectacle/-/spectacle-6.0.0-alpha.1.tgz#23f086dbb5d1b44eba91188269462cdc23fad2f6"
-  integrity sha512-rHPi2Y2s2TkqysbmtIffBbIvO/J1AkthfKzkXyC9o4doF6oh/bQd7xyaG7BTKAt+DQv3JEHlpx9HG5CPN3/g+A==
+spectacle@6.0.0-alpha.2:
+  version "6.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/spectacle/-/spectacle-6.0.0-alpha.2.tgz#b2a1867662b87670c5fbc5779a6bd72a9531f9a4"
+  integrity sha512-zTCXVDoCVFA89MDogtcBGmHR805D/vWuxg4mRG7lEeOSFE1xxwVSqx5HssAMFCBj/HrsoC9lFJCjY9r4WkhnTg==
   dependencies:
     history "^4.9.0"
     marksy "^8.0.0"
