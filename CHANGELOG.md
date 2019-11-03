@@ -1,6 +1,10 @@
 Changes
 =======
 
+## UNRELEASED
+
+* Tests: Add `autoLayout` and `template` features to `examples`. [#10](https://github.com/FormidableLabs/spectacle-cli/issues/10)
+
 ## 0.2.1
 
 * Bugfix: `-b|--build` output builds now enable `production` webpack-optimized builds. [#6](https://github.com/FormidableLabs/spectacle-cli/issues/6)
