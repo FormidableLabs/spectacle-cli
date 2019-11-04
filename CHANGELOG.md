@@ -2,6 +2,7 @@
 
 ## UNRELEASED
 
+- Bugfix: Get hot reload properly working with `*.md` files. (Now runs `.md` through `file-loader` and just `.mdx` through `webpack-mdx-loader`).
 - Tests: Add `autoLayout` and `template` features to `examples`. [#10](https://github.com/FormidableLabs/spectacle-cli/issues/10)
 
 ## 0.2.2

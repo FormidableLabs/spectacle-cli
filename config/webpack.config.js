@@ -35,8 +35,14 @@ module.exports = {
         test: /\.jsx?$/,
         use: [babelLoader]
       },
+      // `.md` files are processed as pure text.
       {
-        test: /\.mdx?$/,
+        test: /\.md$/,
+        use: [require.resolve('raw-loader')]
+      },
+      // `.mdx` files go through babel and our mdx transforming loader.
+      {
+        test: /\.mdx$/,
         use: [babelLoader, require.resolve('../webpack-mdx-loader')]
       },
       {
