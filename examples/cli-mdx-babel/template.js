@@ -3,7 +3,7 @@
  */
 import { createElement } from 'react';
 import { FlexBox, Text } from 'spectacle';
-const logo = './formidable.png';
+import logo from './formidable.png';
 
 const template = ({ numberOfSlides, slideNumber }) =>
   createElement(
