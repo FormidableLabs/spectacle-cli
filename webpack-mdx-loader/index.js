@@ -45,11 +45,10 @@ module.exports = async function(src) {
       if (!group1) {
         // group1 is empty, so this is not the import/export case we're looking for
         return value;
-      } else {
-        // found an inline export or import statement
-        inlineModules.push(value);
-        return '';
       }
+      // found an inline export or import statement
+      inlineModules.push(value);
+      return '';
     })
     /*
      * Split the MDX file by occurences of `---`. This is a reserved symbol

@@ -5,7 +5,7 @@ import React from 'react';
 import { Heading, Text } from 'spectacle';
 
 // Also use `babel-plugin-codegen` available via custom `.babelrc` and local dependency.
-/*global codegen*/
+/* global codegen*/
 const message = codegen`module.exports = "'This message was babel codegen-ed'";`;
 
 const SpectacleSlide = () => {
