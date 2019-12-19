@@ -1,6 +1,6 @@
 # Changes
 
-## UNRELEASED
+## 0.3.0
 
 - **Breaking**: Require node10+.
 - Update various dependencies.
