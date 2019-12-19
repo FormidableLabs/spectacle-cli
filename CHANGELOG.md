@@ -1,5 +1,9 @@
 # Changes
 
+## UNRELEASED
+
+- Update various dependencies.
+
 ## 0.2.3
 
 - Bugfix: Get hot reload properly working with `*.md` files. (Now runs `.md` through `file-loader` and just `.mdx` through `webpack-mdx-loader`).
