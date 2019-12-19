@@ -2,6 +2,7 @@
 
 ## UNRELEASED
 
+- **Breaking**: Require node10+.
 - Update various dependencies.
 
 ## 0.2.3

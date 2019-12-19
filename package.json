@@ -2,6 +2,9 @@
   "name": "spectacle-cli",
   "version": "0.2.3",
   "description": "CLI for the Spectacle Presentation Framework",
+  "engines": {
+    "node": ">=10"
+  },
   "bin": {
     "spectacle": "./bin/cli.js",
     "spectacle-cli": "./bin/cli.js"
