@@ -2,6 +2,8 @@
 
 const yargs = require('yargs');
 
+const { isEmpty } = require('../../lib/util/file');
+
 // TODO(bp): MODE: `--mode=js,mdx,onepage` ???
 // TODO(bp): Extract this to a different file? In `lib/`?
 const MODES = ['js', 'mdx'];
@@ -34,7 +36,6 @@ const args = () =>
     .strict().argv;
 
 // Validate and further transform args.
-// eslint-disable-next-line max-statements
 const parse = async argv => {
   const { mode, dir } = argv;
 
@@ -44,6 +45,10 @@ const parse = async argv => {
   }
 
   // Check that output directory is empty / doesn't exist.
+  const dirEmpty = await isEmpty(dir);
+  if (!dirEmpty) {
+    throw new Error(`Target directory is not empty: "${dir}"`);
+  }
 
   return {
     mode,
