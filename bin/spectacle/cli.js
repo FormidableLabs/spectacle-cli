@@ -3,7 +3,7 @@
 'use strict';
 
 const { parse } = require('./args');
-const actions = require('../lib/actions');
+const actions = require('../../lib/actions');
 
 const main = async () => {
   const {

@@ -1,25 +1,12 @@
 'use strict';
 
-const fs = require('fs');
 const path = require('path');
-const { promisify } = require('util');
 
 const yargs = require('yargs');
 
-const actions = require('../lib/actions');
+const { exists } = require('../../lib/util/file');
+const actions = require('../../lib/actions');
 const ACTIONS = Object.keys(actions);
-
-// Helpers
-const stat = promisify(fs.stat);
-const exists = filePath =>
-  stat(filePath)
-    .then(() => true)
-    .catch(err => {
-      if (err.code === 'ENOENT') {
-        return false;
-      }
-      throw err;
-    });
 
 // Produce args object.
 const args = () =>

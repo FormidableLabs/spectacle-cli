@@ -20,7 +20,9 @@ notifications:
     on_failure: always
 
 script:
+  # Base checks.
+  - yarn run check-ci
   # Build all examples to make sure they're not broken.
   - yarn build-examples
-  # All other checks.
-  - yarn run check-ci
+  # Generate, install, and build all boilerplate projects.
+  - yarn build-boilerplate
