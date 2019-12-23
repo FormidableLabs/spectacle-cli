@@ -4,7 +4,7 @@ const path = require('path');
 
 const yargs = require('yargs');
 
-const { exists } = require('../../lib/util/file');
+const { pathExists } = require('fs-extra');
 const actions = require('../../lib/actions');
 const ACTIONS = Object.keys(actions);
 
@@ -86,7 +86,7 @@ const parse = async argv => {
     );
   }
   const srcFilePath = path.resolve(src);
-  const srcExists = await exists(srcFilePath);
+  const srcExists = await pathExists(srcFilePath);
   if (!srcExists) {
     throw new Error(`Source file "${srcFilePath}" not found.`);
   }
@@ -95,7 +95,7 @@ const parse = async argv => {
   let themeFilePath;
   if (theme) {
     themeFilePath = path.resolve(theme);
-    const themeExists = await exists(themeFilePath);
+    const themeExists = await pathExists(themeFilePath);
     if (!themeExists) {
       throw new Error(`Theme file "${themeFilePath}" not found.`);
     }
@@ -104,7 +104,7 @@ const parse = async argv => {
   let templateFilePath;
   if (template) {
     templateFilePath = path.resolve(template);
-    const templateExists = await exists(templateFilePath);
+    const templateExists = await pathExists(templateFilePath);
     if (!templateExists) {
       throw new Error(`Template file "${templateFilePath}" not found.`);
     }
