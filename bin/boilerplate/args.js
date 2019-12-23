@@ -3,10 +3,9 @@
 const yargs = require('yargs');
 
 const { isEmpty } = require('../../lib/util/file');
+const modes = require('../../lib/boilerplate/modes');
 
-// TODO(bp): MODE: `--mode=js,mdx,onepage` ???
-// TODO(bp): Extract this to a different file? In `lib/`?
-const MODES = ['js', 'mdx'];
+const MODES = Object.keys(modes);
 
 // Produce args object.
 const args = () =>

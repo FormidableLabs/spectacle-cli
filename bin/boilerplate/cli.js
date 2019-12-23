@@ -3,15 +3,12 @@
 'use strict';
 
 const { parse } = require('./args');
+const modes = require('../../lib/boilerplate/modes');
 
 const main = async () => {
   const { mode, dir } = await parse();
-  // TODO(bp): Try to generate `dir` if it doesn't exist.
-  // TODO(bp): Error if `dir` exists and is non-empty.
-  console.log('TODO(bp): IMPELMENT CLI', {
-    mode,
-    dir
-  });
+  const generate = modes[mode];
+  await generate({ dir });
 };
 
 if (require.main === module) {
