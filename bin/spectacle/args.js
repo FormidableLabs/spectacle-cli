@@ -5,7 +5,7 @@ const path = require('path');
 const yargs = require('yargs');
 
 const { pathExists } = require('fs-extra');
-const actions = require('../../lib/actions');
+const actions = require('../../lib/spectacle/actions');
 const ACTIONS = Object.keys(actions);
 
 // Produce args object.
