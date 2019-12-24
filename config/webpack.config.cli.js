@@ -16,7 +16,6 @@ module.exports = {
     // and other resolution issue.
     // https://github.com/FormidableLabs/spectacle-cli/issues/2
     //
-    //
     // Use all of the CLIs production dependencies over anything else found
     // in a user deck.
     alias: Object.keys(dependencies)
@@ -30,6 +29,12 @@ module.exports = {
           )
       )
       // Create alias object.
-      .reduce((memo, dep) => ({ ...memo, [dep]: require.resolve(dep) }), {})
+      .reduce(
+        (memo, dep) => ({
+          ...memo,
+          [dep]: path.dirname(require.resolve(path.join(dep, 'package.json')))
+        }),
+        {}
+      )
   }
 };

@@ -21,7 +21,7 @@ notifications:
 
 script:
   # Base checks.
-  - yarn run check-ci
+  - yarn check:ci
   # Build all examples to make sure they're not broken.
   - yarn build:examples
   # Generate, install, and build all boilerplate projects.

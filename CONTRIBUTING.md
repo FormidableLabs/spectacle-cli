@@ -16,10 +16,9 @@ $ yarn
 
 ### Examples
 
-We have various deck scenarios in `examples` that are part of the development process. So far, they are of two flavors:
+We have various deck scenarios in `examples` that are part of the development process. So far, they are of following flavors:
 
 - `examples/cli-{NAME}`: Test the CLI dev server.
-- `examples/loader-{NAME}`: Test a straight webpack build with `webpack-mdx-loader`.
 
 #### `examples/cli-mdx`
 
@@ -55,18 +54,6 @@ $ yarn start:cli-md
 
 # In another open a browser to 3100
 $ open http://localhost:3100/
-```
-
-#### `examples/loader-mdx`
-
-A vanilla webpack build using MDX slides found in `examples/loader-mdx/slides.mdx`.
-
-```sh
-# In one terminal open webpack dev server
-$ yarn start:loader-mdx
-
-# In another open a browser to 4000
-$ open http://localhost:4000/
 ```
 
 ### Testing
