@@ -43,7 +43,7 @@ module.exports = {
       // `.mdx` files go through babel and our mdx transforming loader.
       {
         test: /\.mdx$/,
-        use: [babelLoader, require.resolve('../webpack-mdx-loader')]
+        use: [babelLoader, require.resolve('spectacle-mdx-loader')]
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
@@ -71,6 +71,12 @@ module.exports = {
           )
       )
       // Create alias object.
-      .reduce((memo, dep) => ({ ...memo, [dep]: require.resolve(dep) }), {})
+      .reduce(
+        (memo, dep) => ({
+          ...memo,
+          [dep]: path.dirname(require.resolve(path.join(dep, 'package.json')))
+        }),
+        {}
+      )
   }
 };
