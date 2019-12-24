@@ -6,9 +6,9 @@ const { parse } = require('./args');
 const modes = require('../../lib/boilerplate/modes');
 
 const main = async () => {
-  const { mode, dir } = await parse();
+  const { mode, name, description, dir } = await parse();
   const generate = modes[mode];
-  await generate({ dir });
+  await generate({ name, description, dir });
 };
 
 if (require.main === module) {
