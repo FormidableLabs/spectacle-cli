@@ -2,6 +2,8 @@
 !/bin
 !/lib
 !/config
+!/examples/cli-md
+!/examples/cli-mdx
 !LICENSE.txt
 !README.md
 !package.json
