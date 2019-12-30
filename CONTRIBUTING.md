@@ -18,7 +18,7 @@ $ yarn
 
 We have various deck scenarios in `examples` that are part of the development process. So far, they are of following flavors:
 
-- `examples/cli-{NAME}`: Test the CLI dev server.
+- `examples/cli-{NAME}`: Test the CLI dev server for CLI scenarios
 
 #### `examples/cli-mdx`
 
