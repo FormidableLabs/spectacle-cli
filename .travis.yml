@@ -26,3 +26,5 @@ script:
   - yarn examples:build
   # Generate, install, and build all boilerplate projects.
   - yarn boilerplate:generate
+  - yarn boilerplate:install
+  - yarn boilerplate:build

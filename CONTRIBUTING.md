@@ -20,6 +20,12 @@ We have various deck scenarios in `examples` that are part of the development pr
 
 - `examples/cli-{NAME}`: Test the CLI dev server for CLI scenarios
 
+We have a helper script to run **all** of the CLI examples in dev server mode with:
+
+```sh
+$ yarn start:examples
+```
+
 #### `examples/cli-mdx`
 
 A CLI build using MDX slides found in `examples/cli-mdx/slides.mdx`.
@@ -54,6 +60,68 @@ $ yarn start:cli-md
 
 # In another open a browser to 3100
 $ open http://localhost:3100/
+```
+
+### Boilerplate
+
+The additional CLI tool `spectacle-boilerplate` produces standalone projects that consist of a starting Spectacle deck (as `.js`, `.mdx`, or .`mdx`). In localdev, we create sample outputs in `.examples-boilerplate`.
+
+We have a helper script to run **all** of the boilerplate examples in dev server mode with:
+
+```sh
+$ yarn start:boilerplate
+```
+
+#### `.examples-boilerplate/mdx`
+
+A boilerplate build using MDX slides found in `examples/cli-mdx/slides.mdx`.
+
+```sh
+# Generate, install, and build. (Build not needed for `start` dev server.)
+$ yarn boilerplate:generate:mdx
+$ yarn boilerplate:install:mdx
+$ yarn boilerplate:build:mdx
+
+# In one terminal open CLI dev server
+$ yarn boilerplate:start:mdx
+
+# In another open a browser to 4000
+$ open http://localhost:4000/
+```
+
+#### `.examples-boilerplate/md`
+
+A boilerplate build using vanilla Markdown slides found in `examples/cli-md/slides.md`.
+
+```sh
+# Generate, install, and build. (Build not needed for `start` dev server.)
+$ yarn boilerplate:generate:md
+$ yarn boilerplate:install:md
+$ yarn boilerplate:build:md
+
+# In one terminal open CLI dev server
+$ yarn boilerplate:start:md
+
+# In another open a browser to 4100
+$ open http://localhost:4100/
+```
+
+
+#### `.examples-boilerplate/js`
+
+A boilerplate build using vanilla JavaScript slides found in `lib/templates/js-slides/index.js`. This file is modified from: https://github.com/FormidableLabs/spectacle/blob/task/rewrite/examples/js/index.js and we should try to keep it up to date.
+
+```sh
+# Generate, install, and build. (Build not needed for `start` dev server.)
+$ yarn boilerplate:generate:js
+$ yarn boilerplate:install:js
+$ yarn boilerplate:build:js
+
+# In one terminal open CLI dev server
+$ yarn boilerplate:start:js
+
+# In another open a browser to 4200
+$ open http://localhost:4200/
 ```
 
 ### Testing
