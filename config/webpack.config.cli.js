@@ -10,8 +10,12 @@ const baseCfg = require('./webpack.config');
 
 module.exports = {
   ...baseCfg,
-  entry: null, // Provided via CLI.
-  plugins: [], // Provided via CLI. TODO(bp): REMOVE THIS???
+
+  // Empty out some fields that are only used in boilerplate projects.
+  entry: null,
+  plugins: [],
+
+  // Custom resolution.
   resolve: {
     // TODO(2): Review if we actually need these aliases to avoid the dreaded
     // "two reacts" problem (`Invalid hook call. Hooks can only be called ...`)

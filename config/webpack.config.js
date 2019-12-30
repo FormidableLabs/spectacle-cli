@@ -50,7 +50,12 @@ module.exports = {
         use: [require.resolve('file-loader')]
       }
     ]
-  }
-  // TODO(bp): Need html webpack plugin
-  // , plugins: [new HtmlWebpackPlugin({ title: "TODO", template: './src/index.html' })]
+  },
+  // Default for boilerplate generation.
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Spectacle presentation',
+      template: './src/index.html'
+    })
+  ]
 };
