@@ -1,6 +1,7 @@
 'use strict';
 
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 // Customized babel loader with the minimum we need to get `mdx` libraries
 // working, which unfortunately codegen JSX instead of JS.
@@ -20,7 +21,7 @@ const babelLoader = {
 
 module.exports = {
   mode: 'development',
-  entry: null,
+  entry: './src/index.js', // Default for boilerplate generation.
   output: {
     path: path.resolve('dist'),
     filename: 'deck.js'
@@ -50,4 +51,6 @@ module.exports = {
       }
     ]
   }
+  // TODO(bp): Need html webpack plugin
+  // , plugins: [new HtmlWebpackPlugin({ title: "TODO", template: './src/index.html' })]
 };
