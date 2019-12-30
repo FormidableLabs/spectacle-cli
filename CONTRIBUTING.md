@@ -22,7 +22,7 @@ We have various deck scenarios in `examples` that are part of the development pr
 
 #### `examples/cli-mdx`
 
-A CLI build using MDX slides found in `examples/cli-mdx/slides.mdx` and a custom theme found at `examples/cli-mdx/theme.js`.
+A CLI build using MDX slides found in `examples/cli-mdx/slides.mdx`.
 
 ```sh
 # In one terminal open CLI dev server
@@ -34,7 +34,7 @@ $ open http://localhost:3000/
 
 #### `examples/cli-mdx-babel`
 
-A CLI build using MDX slides found in `examples/cli-mdx-babel/slides.mdx`, a custom `.babelrc` for additional functionality beyond `@babel/preset-react`, and a `Spectacle`-customized slide import.
+A CLI build using MDX slides found in `examples/cli-mdx-babel/slides.mdx`, a custom `.babelrc` for additional functionality beyond `@babel/preset-react`, a `Spectacle`-customized slide import, and a custom theme found at `examples/cli-mdx-babel/theme.js`.
 
 ```sh
 # In one terminal open CLI dev server
