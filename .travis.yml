@@ -23,6 +23,6 @@ script:
   # Base checks.
   - yarn check:ci
   # Build all examples to make sure they're not broken.
-  - yarn build:examples
+  - yarn examples:build
   # Generate, install, and build all boilerplate projects.
-  - yarn build:boilerplate
+  - yarn boilerplate:build

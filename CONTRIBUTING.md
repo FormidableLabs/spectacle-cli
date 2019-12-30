@@ -76,8 +76,8 @@ Thanks for taking the time to help us make Spectacle even better! Before you go 
 - Consider if your changes should be incorporated in one or more `examples/*` scenarios. Like a new feature, option, etc. Let's try out everything we add!
 - Add an `## UNRELEASED` `CHANGELOG.md` entry for later publishing ease.
 - Check if the usage for `README.md` changes by executing `$ node bin/spectacle/cli.js -h`, `$ node bin/boilerplate/cli.js -h`,  and potentially updating.
-- Check that all of the examples build: `yarn build:examples`.
-- Check that all of the boilerplate examples generate, install, and build: `yarn build:boilerplate`.
+- Check that all of the examples build: `yarn examples:build`.
+- Check that all of the boilerplate examples generate, install, and build: `yarn boilerplate:build`.
 - Run all checks using `yarn run check`
 
 ### Releasing a new version to NPM
