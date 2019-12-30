@@ -25,4 +25,4 @@ script:
   # Build all examples to make sure they're not broken.
   - yarn examples:build
   # Generate, install, and build all boilerplate projects.
-  - yarn boilerplate:build
+  - yarn boilerplate:generate
