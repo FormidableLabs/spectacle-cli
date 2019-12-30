@@ -17,7 +17,7 @@ $ yarn global add spectacle-cli
 
 ... or use it directly with [npx][] as `npx spectacle-cli`
 
-## Usage
+## Using the CLI
 
 The Spectacle CLI will create a development server to create a `.md` or `.mdx` slides-based deck with additional enhancements for theme overrides, etc.
 
@@ -52,6 +52,45 @@ Some additional tips:
     * `build`: Output a full production website static build to the `-o|--output` directory.
 * `-s|--src`: The slide source file path. If a file has a `.md` suffix is processed as straight Markdown. If a file has a `.mdx` suffix it is processed as enhanced MDX.
 * `-t|--theme`: A `require|import`-able file (e.g., `.js` or `.json`) that contains an object to override the Spectacle default theme in places.
+
+## Boilerplate generation
+
+Want a much more customizable experience with full build control? Then `spectacle-boilerplate` is for you!
+
+The `spectacle-boilerplate` command generates fresh Spectacle projects of various flavors as appropriate to your needs with a fully installable `package.json`, webpack configurations, and development+build commands. You can create a vanilla JavaScript deck, or one that ingests MDX or markdown slides.
+
+```sh
+Usage: spectacle-boilerplate -s <file>
+
+Options:
+  --mode, -m         Deck type to generate (js, mdx, md)[string] [default: "js"]
+  --name, -n         Project name (`package.json:name`)
+                                    [string] [default: "spectacle-presentation"]
+  --description, -e  Project description (`package.json:description`)
+                                    [string] [default: "Spectacle presentation"]
+  --dir, -d          Directory for generated/boilerplate files.
+                                                         [string] [default: "."]
+  --help, -h         Show help                                         [boolean]
+  --version, -v      Show version number                               [boolean]
+```
+
+You can install `spectacle-cli` globally or locally and then run `spectacle-boilerplate`. _Or_, you can just use `npx -p spectacle-cli spectacle-boilerplate` for fully-contained one-line shell commands! Some examples:
+
+```sh
+# Generate a JavaScript deck project
+$ npx -p spectacle-cli spectacle-boilerplate
+
+# ... or an MDX deck project with a custom name + description
+$ npx -p spectacle-cli spectacle-boilerplate \
+  --mode mdx \
+  --name "deck-o-awesome" \
+  --description "My generated Spectacle MDX deck"
+
+# ... or a Markdown deck project to a different directory than CWD.
+$ npx -p spectacle-cli spectacle-boilerplate \
+  --mode md \
+  --dir "project-o-awesome
+```
 
 ## Details
 
