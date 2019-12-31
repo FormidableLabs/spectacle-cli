@@ -3,6 +3,7 @@
 ## UNRELEASED
 
 - **Breaking**: Extract MDX loader to https://github.com/FormidableLabs/spectacle-mdx-loader
+- **Feature**: Add `spectacle-boilerplate` generation tool.
 - Corrects small bug in webpack `resolve.alias` for nested path imports.
 
 ## 0.3.0
