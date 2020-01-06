@@ -8,4 +8,5 @@
 !README.md
 !package.json
 .eslint*
-
+dist
+.DS_Store
