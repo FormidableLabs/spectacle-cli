@@ -1,5 +1,10 @@
 # Changes
 
+## UNRELEASED
+
+- **Breaking**: Extract MDX loader to https://github.com/FormidableLabs/spectacle-mdx-loader
+- Corrects small bug in webpack `resolve.alias` for nested path imports.
+
 ## 0.3.0
 
 - **Breaking**: Require node10+.
@@ -7,7 +12,7 @@
 
 ## 0.2.3
 
-- Bugfix: Get hot reload properly working with `*.md` files. (Now runs `.md` through `file-loader` and just `.mdx` through `webpack-mdx-loader`).
+- Bugfix: Get hot reload properly working with `*.md` files. (Now runs `.md` through `file-loader` and just `.mdx` through `spectacle-mdx-loader`).
 - Tests: Add `autoLayout` and `template` features to `examples`. [#10](https://github.com/FormidableLabs/spectacle-cli/issues/10)
 
 ## 0.2.2

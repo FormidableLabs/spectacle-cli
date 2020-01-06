@@ -20,7 +20,7 @@ notifications:
     on_failure: always
 
 script:
+  # Base checks.
+  - yarn check:ci
   # Build all examples to make sure they're not broken.
-  - yarn build-examples
-  # All other checks.
-  - yarn run check-ci
+  - yarn build:examples
