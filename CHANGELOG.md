@@ -1,6 +1,6 @@
 # Changes
 
-## UNRELEASED
+## 0.4.0
 
 - **Breaking**: Extract MDX loader to https://github.com/FormidableLabs/spectacle-mdx-loader
 - Corrects small bug in webpack `resolve.alias` for nested path imports.
