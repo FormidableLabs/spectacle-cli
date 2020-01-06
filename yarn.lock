@@ -5227,9 +5227,10 @@ spdy@^4.0.1:
     select-hose "^2.0.0"
     spdy-transport "^3.0.0"
 
-spectacle-mdx-loader@FormidableLabs/spectacle-mdx-loader:
+spectacle-mdx-loader@0.0.1:
   version "0.0.1"
-  resolved "https://codeload.github.com/FormidableLabs/spectacle-mdx-loader/tar.gz/95d84039fe98f9a13f49b17be9b1111f5ef2beae"
+  resolved "https://registry.yarnpkg.com/spectacle-mdx-loader/-/spectacle-mdx-loader-0.0.1.tgz#b0b1b3774288a5e35d335f7262bc83dd8e8fea71"
+  integrity sha512-NHIFHX73zo9Ye/dlQYAYU/ANd8sinRqQpYQHh43sBuJSY6foYod8S2N52nsqujNyb4bo+0bLOlDGXvyw+PdDqg==
   dependencies:
     "@mdx-js/mdx" "^1.5.3"
     gray-matter "^4.0.2"
