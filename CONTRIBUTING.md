@@ -134,7 +134,7 @@ To check (and fix) code:
 
 ```sh
 $ yarn lint
-$ yarn lint-fix
+$ yarn lint --fix
 ```
 
 ### Before submitting a PR
