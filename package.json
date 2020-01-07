@@ -1,6 +1,6 @@
 {
   "name": "spectacle-cli",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "CLI for the Spectacle Presentation Framework",
   "engines": {
     "node": ">=10"
@@ -31,11 +31,11 @@
     "boilerplate:start:md": "cd .examples-boilerplate/md && yarn start --port 4100",
     "boilerplate:start:mdx": "cd .examples-boilerplate/mdx && yarn start --port 4000",
     "examples:build:cli-md": "cd examples/cli-md && node ../../bin/spectacle/cli.js --title \"Spectacle CLI + MD Example\" --src slides.md -a build",
-    "examples:build:cli-mdx": "cd examples/cli-mdx && node ../../bin/spectacle/cli.js -l \"Spectacle CLI + MDX + Babel + Custom Theme Example\" -f true --action build --output dist",
+    "examples:build:cli-mdx": "cd examples/cli-mdx && node ../../bin/spectacle/cli.js -l \"Spectacle CLI + MDX + Babel + Custom Theme Example\" true --action build --output dist",
     "examples:build:cli-mdx-babel": "cd examples/cli-mdx-babel && node ../../bin/spectacle/cli.js -l \"Spectacle CLI + MDX + Babel + Spectacle Slide Example\" -q template.js -t theme.js --action build",
     "examples:build": "builder concurrent --buffer examples:build:cli-md examples:build:cli-mdx examples:build:cli-mdx-babel",
     "start:cli-md": "cd examples/cli-md && node ../../bin/spectacle/cli.js --title \"Spectacle CLI + MD Example\" --src slides.md --port 3100",
-    "start:cli-mdx": "cd examples/cli-mdx && node ../../bin/spectacle/cli.js -l \"Spectacle CLI + MDX + Custom Theme Example\" -f true -p 3000",
+    "start:cli-mdx": "cd examples/cli-mdx && node ../../bin/spectacle/cli.js -l \"Spectacle CLI + MDX + Custom Theme Example\" true -p 3000",
     "start:cli-mdx-babel": "cd examples/cli-mdx-babel && node ../../bin/spectacle/cli.js -l \"Spectacle CLI + MDX + Babel + Spectacle Slide Example\" -q template.js -t theme.js -p 3001",
     "start:examples": "builder concurrent --log-level=info start:cli-md start:cli-mdx start:cli-mdx-babel",
     "start:boilerplate": "builder concurrent --log-level=info boilerplate:start:js boilerplate:start:md boilerplate:start:mdx",

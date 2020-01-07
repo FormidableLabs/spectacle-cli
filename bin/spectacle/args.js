@@ -37,12 +37,6 @@ const args = () =>
       type: 'string',
       default: 'Presentation'
     })
-    .option('autoLayout', {
-      alias: 'f',
-      describe: 'Uses a align-items center layout using flex for all sides.',
-      type: 'boolean',
-      default: false
-    })
     .option('template', {
       alias: 'q',
       describe:
@@ -72,7 +66,7 @@ const args = () =>
 // Validate and further transform args.
 // eslint-disable-next-line max-statements
 const parse = async argv => {
-  const { action, src, theme, port, title, autoLayout, template } = argv;
+  const { action, src, theme, port, title, template } = argv;
 
   // Action.
   if (!actions[action]) {
@@ -116,8 +110,7 @@ const parse = async argv => {
     title,
     srcFilePath,
     themeFilePath,
-    templateFilePath,
-    autoLayout
+    templateFilePath
   };
 };
 

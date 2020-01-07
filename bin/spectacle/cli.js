@@ -12,8 +12,7 @@ const main = async () => {
     title,
     srcFilePath,
     themeFilePath,
-    templateFilePath,
-    autoLayout
+    templateFilePath
   } = await parse();
   const run = actions[action];
   await run({
@@ -21,8 +20,7 @@ const main = async () => {
     title,
     srcFilePath,
     themeFilePath,
-    templateFilePath,
-    autoLayout
+    templateFilePath
   });
 };
 
