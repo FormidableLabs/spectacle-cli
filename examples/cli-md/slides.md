@@ -1,4 +1,4 @@
-# MD Slides 👋
+# Spectacle Presentation (MD) 👋
 
 These slides are bare Markdown with nothing special.
 

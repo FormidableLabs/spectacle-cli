@@ -3,27 +3,12 @@
 'use strict';
 
 const { parse } = require('./args');
-const actions = require('../lib/actions');
+const modes = require('../../lib/boilerplate/modes');
 
 const main = async () => {
-  const {
-    action,
-    port,
-    title,
-    srcFilePath,
-    themeFilePath,
-    templateFilePath,
-    autoLayout
-  } = await parse();
-  const run = actions[action];
-  await run({
-    port,
-    title,
-    srcFilePath,
-    themeFilePath,
-    templateFilePath,
-    autoLayout
-  });
+  const { mode, name, description, dir } = await parse();
+  const generate = modes[mode];
+  await generate({ name, description, dir });
 };
 
 if (require.main === module) {

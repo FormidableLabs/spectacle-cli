@@ -18,11 +18,17 @@ $ yarn
 
 We have various deck scenarios in `examples` that are part of the development process. So far, they are of following flavors:
 
-- `examples/cli-{NAME}`: Test the CLI dev server.
+- `examples/cli-{NAME}`: Test the CLI dev server for CLI scenarios
+
+We have a helper script to run **all** of the CLI examples in dev server mode with:
+
+```sh
+$ yarn start:examples
+```
 
 #### `examples/cli-mdx`
 
-A CLI build using MDX slides found in `examples/cli-mdx/slides.mdx` and a custom theme found at `examples/cli-mdx/theme.js`.
+A CLI build using MDX slides found in `examples/cli-mdx/slides.mdx`.
 
 ```sh
 # In one terminal open CLI dev server
@@ -34,7 +40,7 @@ $ open http://localhost:3000/
 
 #### `examples/cli-mdx-babel`
 
-A CLI build using MDX slides found in `examples/cli-mdx-babel/slides.mdx`, a custom `.babelrc` for additional functionality beyond `@babel/preset-react`, and a `Spectacle`-customized slide import.
+A CLI build using MDX slides found in `examples/cli-mdx-babel/slides.mdx`, a custom `.babelrc` for additional functionality beyond `@babel/preset-react`, a `Spectacle`-customized slide import, and a custom theme found at `examples/cli-mdx-babel/theme.js`.
 
 ```sh
 # In one terminal open CLI dev server
@@ -56,6 +62,68 @@ $ yarn start:cli-md
 $ open http://localhost:3100/
 ```
 
+### Boilerplate
+
+The additional CLI tool `spectacle-boilerplate` produces standalone projects that consist of a starting Spectacle deck (as `.js`, `.mdx`, or .`mdx`). In localdev, we create sample outputs in `.examples-boilerplate`.
+
+We have a helper script to run **all** of the boilerplate examples in dev server mode with:
+
+```sh
+$ yarn start:boilerplate
+```
+
+#### `.examples-boilerplate/mdx`
+
+A boilerplate build using MDX slides found in `examples/cli-mdx/slides.mdx`.
+
+```sh
+# Generate, install, and build. (Build not needed for `start` dev server.)
+$ yarn boilerplate:generate:mdx
+$ yarn boilerplate:install:mdx
+$ yarn boilerplate:build:mdx
+
+# In one terminal open CLI dev server
+$ yarn boilerplate:start:mdx
+
+# In another open a browser to 4000
+$ open http://localhost:4000/
+```
+
+#### `.examples-boilerplate/md`
+
+A boilerplate build using vanilla Markdown slides found in `examples/cli-md/slides.md`.
+
+```sh
+# Generate, install, and build. (Build not needed for `start` dev server.)
+$ yarn boilerplate:generate:md
+$ yarn boilerplate:install:md
+$ yarn boilerplate:build:md
+
+# In one terminal open CLI dev server
+$ yarn boilerplate:start:md
+
+# In another open a browser to 4100
+$ open http://localhost:4100/
+```
+
+
+#### `.examples-boilerplate/js`
+
+A boilerplate build using vanilla JavaScript slides found in `lib/templates/js-slides/index.js`. This file is modified from: https://github.com/FormidableLabs/spectacle/blob/task/rewrite/examples/js/index.js and we should try to keep it up to date.
+
+```sh
+# Generate, install, and build. (Build not needed for `start` dev server.)
+$ yarn boilerplate:generate:js
+$ yarn boilerplate:install:js
+$ yarn boilerplate:build:js
+
+# In one terminal open CLI dev server
+$ yarn boilerplate:start:js
+
+# In another open a browser to 4200
+$ open http://localhost:4200/
+```
+
 ### Testing
 
 @TODO(3) https://github.com/FormidableLabs/spectacle-cli/issues/3
@@ -75,8 +143,16 @@ Thanks for taking the time to help us make Spectacle even better! Before you go 
 
 - Consider if your changes should be incorporated in one or more `examples/*` scenarios. Like a new feature, option, etc. Let's try out everything we add!
 - Add an `## UNRELEASED` `CHANGELOG.md` entry for later publishing ease.
-- Check if the usage for `README.md` changes by executing `$ node bin/cli.js -h` and potentially updating.
-- Check that all of the examples build: `yarn build:examples`.
+- Check if the usage for `README.md` changes by executing `$ node bin/spectacle/cli.js -h`, `$ node bin/boilerplate/cli.js -h`,  and potentially updating.
+- Check that all of the examples build: `yarn examples:build`.
+- Check that all of the boilerplate examples generate, install, and build:
+
+    ```sh
+    $ yarn boilerplate:generate
+    $ yarn boilerplate:install
+    $ yarn boilerplate:build
+    ```
+
 - Run all checks using `yarn run check`
 
 ### Releasing a new version to NPM

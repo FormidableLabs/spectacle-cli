@@ -1,25 +1,12 @@
 'use strict';
 
-const fs = require('fs');
 const path = require('path');
-const { promisify } = require('util');
 
 const yargs = require('yargs');
 
-const actions = require('../lib/actions');
+const { pathExists } = require('fs-extra');
+const actions = require('../../lib/spectacle/actions');
 const ACTIONS = Object.keys(actions);
-
-// Helpers
-const stat = promisify(fs.stat);
-const exists = filePath =>
-  stat(filePath)
-    .then(() => true)
-    .catch(err => {
-      if (err.code === 'ENOENT') {
-        return false;
-      }
-      throw err;
-    });
 
 // Produce args object.
 const args = () =>
@@ -99,7 +86,7 @@ const parse = async argv => {
     );
   }
   const srcFilePath = path.resolve(src);
-  const srcExists = await exists(srcFilePath);
+  const srcExists = await pathExists(srcFilePath);
   if (!srcExists) {
     throw new Error(`Source file "${srcFilePath}" not found.`);
   }
@@ -108,7 +95,7 @@ const parse = async argv => {
   let themeFilePath;
   if (theme) {
     themeFilePath = path.resolve(theme);
-    const themeExists = await exists(themeFilePath);
+    const themeExists = await pathExists(themeFilePath);
     if (!themeExists) {
       throw new Error(`Theme file "${themeFilePath}" not found.`);
     }
@@ -117,7 +104,7 @@ const parse = async argv => {
   let templateFilePath;
   if (template) {
     templateFilePath = path.resolve(template);
-    const templateExists = await exists(templateFilePath);
+    const templateExists = await pathExists(templateFilePath);
     if (!templateExists) {
       throw new Error(`Template file "${templateFilePath}" not found.`);
     }

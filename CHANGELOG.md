@@ -1,5 +1,9 @@
 # Changes
 
+## UNRELEASED
+
+- **Feature**: Add `spectacle-boilerplate` generation tool.
+
 ## 0.4.0
 
 - **Breaking**: Extract MDX loader to https://github.com/FormidableLabs/spectacle-mdx-loader

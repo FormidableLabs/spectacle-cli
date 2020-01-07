@@ -1,7 +1,7 @@
 // `react`, `react-dom`, and `spectacle` are already provided as built-in dependencies.
 import React from 'react';
 
-// Use all the power of Spectacle components!
+// Use all of the power of Spectacle components!
 import { Heading, Text } from 'spectacle';
 
 // Also use `babel-plugin-codegen` available via custom `.babelrc` and local dependency.
