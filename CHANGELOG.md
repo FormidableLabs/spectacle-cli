@@ -1,6 +1,6 @@
 # Changes
 
-## UNRELEASED
+## 0.4.1
 
 - **Feature**: Add `spectacle-boilerplate` generation tool.
 
