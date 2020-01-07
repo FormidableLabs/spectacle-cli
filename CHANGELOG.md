@@ -1,8 +1,8 @@
 # Changes
 
-## 0.5.0
+## UNRELEASED
 
--- **Breaking** Remove `autoLayout` since the flex-based layout feature is intrinsic to Spectacle now.
+- **Breaking** Remove `autoLayout` since the flex-based layout feature is intrinsic to Spectacle now.
 
 ## 0.4.1
 
