@@ -1,5 +1,9 @@
 # Changes
 
+## UNRELEASED
+
+- **Breaking** Remove `autoLayout` since the flex-based layout feature is intrinsic to Spectacle now.
+
 ## 0.4.1
 
 - **Feature**: Add `spectacle-boilerplate` generation tool.
