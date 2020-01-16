@@ -1,5 +1,9 @@
 # Changes
 
+## UNRELEASED
+
+- Fix `.npmrc`, removing unneeded examples. [#24](https://github.com/FormidableLabs/spectacle-cli/issues/24)
+
 ## 0.5.0
 
 - **Breaking** Remove `autoLayout` since the flex-based layout feature is intrinsic to Spectacle now.
