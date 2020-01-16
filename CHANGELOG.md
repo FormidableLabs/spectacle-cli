@@ -3,6 +3,7 @@
 ## UNRELEASED
 
 - **Breaking** Remove `autoLayout` since the flex-based layout feature is intrinsic to Spectacle now.
+- Fix incorrect usage message in `spectacle-boilerplate`.
 
 ## 0.4.1
 
