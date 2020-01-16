@@ -11,7 +11,7 @@ const MODES = Object.keys(modes);
 // Produce args object.
 const args = () =>
   yargs
-    .usage('Usage: spectacle-boilerplate -s <file>')
+    .usage('Usage: spectacle-boilerplate')
 
     // Substantive
     .option('mode', {
