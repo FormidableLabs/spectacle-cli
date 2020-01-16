@@ -3,7 +3,7 @@
 [![npm version][npm_img]][npm_site]
 [![Travis Status][trav_img]][trav_site]
 
-A generation tool for [Spectacle][] presentation decks.
+A generation tool for [Spectacle][] presentation decks. Includes `spectacle` and `spectacle-boilerplate`.
 
 ## Installation
 
@@ -14,9 +14,14 @@ $ npm install --global spectacle-cli
 $ yarn global add spectacle-cli
 ```
 
-... or use it directly with [npx][] as `npx spectacle-cli`
+to get:
 
-## Using the CLI
+- `spectacle`/`spectacle-cli`: The Spectacle CLI for one-stop spectacle presentations from a source (`.mdx` or `.md`) slide deck in a single command!
+- `spectacle-boilerplate`: Generate standalone Spectacle projects with all dependencies, build scripts, and example starter decks in either JS, MDX, or Markdown.
+
+... or use it directly with [npx][] as `npx spectacle-cli` for the CLI or `npx -p spectacle-cli spectacle-boilerplate` for the generation tool.
+
+## The Spectacle CLI (`spectacle`)
 
 The Spectacle CLI will create a development server to create a `.md` or `.mdx` slides-based deck with additional enhancements for theme overrides, etc.
 
@@ -50,7 +55,7 @@ Some additional tips:
 - `-s|--src`: The slide source file path. If a file has a `.md` suffix is processed as straight Markdown. If a file has a `.mdx` suffix it is processed as enhanced MDX.
 - `-t|--theme`: A `require|import`-able file (e.g., `.js` or `.json`) that contains an object to override the Spectacle default theme in places.
 
-## Boilerplate generation
+## Boilerplate generation (`spectacle-boilerplate`)
 
 Want a much more customizable experience with full build control? Then `spectacle-boilerplate` is for you!
 
@@ -75,16 +80,16 @@ You can install `spectacle-cli` globally or locally and then run `spectacle-boil
 
 ```sh
 # Generate a JavaScript deck project
-$ npx -p spectacle-cli spectacle-boilerplate
+$ spectacle-boilerplate
 
 # ... or an MDX deck project with a custom name + description
-$ npx -p spectacle-cli spectacle-boilerplate \
+$ spectacle-boilerplate \
   --mode mdx \
   --name "deck-o-awesome" \
   --description "My generated Spectacle MDX deck"
 
 # ... or a Markdown deck project to a different directory than CWD.
-$ npx -p spectacle-cli spectacle-boilerplate \
+$ spectacle-boilerplate \
   --mode md \
   --dir "project-o-awesome
 ```
