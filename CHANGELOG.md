@@ -1,6 +1,6 @@
 # Changes
 
-## UNRELEASED
+## 0.5.1
 
 - Fix `.npmrc`, removing unneeded examples. [#24](https://github.com/FormidableLabs/spectacle-cli/issues/24)
 
