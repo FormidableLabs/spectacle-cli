@@ -34,8 +34,8 @@ A CLI build using MDX slides found in `examples/cli-mdx/slides.mdx`.
 # In one terminal open CLI dev server
 $ yarn start:cli-mdx
 
-# In another open a browser to 3000
-$ open http://localhost:3000/
+# In another open a browser to 5000
+$ open http://localhost:5000/
 ```
 
 #### `examples/cli-mdx-babel`
@@ -46,8 +46,8 @@ A CLI build using MDX slides found in `examples/cli-mdx-babel/slides.mdx`, a cus
 # In one terminal open CLI dev server
 $ yarn start:cli-mdx-babel
 
-# In another open a browser to 3001
-$ open http://localhost:3001/
+# In another open a browser to 5001
+$ open http://localhost:5001/
 ```
 
 #### `examples/cli-md`
@@ -58,8 +58,8 @@ A CLI build using vanilla Markdown slides found in `examples/cli-md/slides.md`.
 # In one terminal open CLI dev server
 $ yarn start:cli-md
 
-# In another open a browser to 3100
-$ open http://localhost:3100/
+# In another open a browser to 5100
+$ open http://localhost:5100/
 ```
 
 ### Boilerplate
@@ -85,8 +85,8 @@ $ yarn boilerplate:build:mdx
 # In one terminal open CLI dev server
 $ yarn boilerplate:start:mdx
 
-# In another open a browser to 4000
-$ open http://localhost:4000/
+# In another open a browser to 6300
+$ open http://localhost:6300/
 ```
 
 #### `.examples-boilerplate/md`
@@ -102,8 +102,8 @@ $ yarn boilerplate:build:md
 # In one terminal open CLI dev server
 $ yarn boilerplate:start:md
 
-# In another open a browser to 4100
-$ open http://localhost:4100/
+# In another open a browser to 6100
+$ open http://localhost:6100/
 ```
 
 
@@ -120,8 +120,8 @@ $ yarn boilerplate:build:js
 # In one terminal open CLI dev server
 $ yarn boilerplate:start:js
 
-# In another open a browser to 4200
-$ open http://localhost:4200/
+# In another open a browser to 6200
+$ open http://localhost:6200/
 ```
 
 ### Testing
