@@ -18,7 +18,7 @@ $ yarn
 
 We have various deck scenarios in `examples` that are part of the development process. So far, they are of following flavors:
 
-- `examples/cli-{NAME}`: Test the CLI dev server for CLI scenarios
+- `examples/cli-{NAME}`: Test the CLI dev server for CLI scenarios. Note that most of these rely on example content from a dependency like `spectacle` or `spectacle-mdx-loader` and just provide a destination `dist/` directory for build testing.
 
 We have a helper script to run **all** of the CLI examples in dev server mode with:
 
@@ -28,7 +28,7 @@ $ yarn start:examples
 
 #### `examples/cli-mdx`
 
-A CLI build using MDX slides found in `examples/cli-mdx/slides.mdx`.
+A CLI build using MDX slides found in `spectacle-mdx-loader/examples/mdx/slides.mdx`.
 
 ```sh
 # In one terminal open CLI dev server
@@ -52,7 +52,7 @@ $ open http://localhost:5001/
 
 #### `examples/cli-md`
 
-A CLI build using vanilla Markdown slides found in `examples/cli-md/slides.md`.
+A CLI build using vanilla Markdown slides found in `spectacle/examples/md/slides.md`.
 
 ```sh
 # In one terminal open CLI dev server
@@ -74,7 +74,7 @@ $ yarn start:boilerplate
 
 #### `.examples-boilerplate/mdx`
 
-A boilerplate build using MDX slides found in `examples/cli-mdx/slides.mdx`.
+A boilerplate build using MDX slides found in `spectacle-mdx-loader/examples/mdx`.
 
 ```sh
 # Generate, install, and build. (Build not needed for `start` dev server.)
@@ -91,7 +91,7 @@ $ open http://localhost:6300/
 
 #### `.examples-boilerplate/md`
 
-A boilerplate build using vanilla Markdown slides found in `examples/cli-md/slides.md`.
+A boilerplate build using vanilla Markdown slides found in `spectacle/examples/md`.
 
 ```sh
 # Generate, install, and build. (Build not needed for `start` dev server.)
@@ -109,7 +109,7 @@ $ open http://localhost:6100/
 
 #### `.examples-boilerplate/js`
 
-A boilerplate build using vanilla JavaScript slides found in `lib/templates/js-slides/index.js`. This file is modified from: https://github.com/FormidableLabs/spectacle/blob/task/rewrite/examples/js/index.js and we should try to keep it up to date.
+A boilerplate build using vanilla JavaScript slides found in `spectacle/examples/js`. This file is modified from: https://github.com/FormidableLabs/spectacle/blob/task/rewrite/examples/js/index.js and we should try to keep it up to date.
 
 ```sh
 # Generate, install, and build. (Build not needed for `start` dev server.)
