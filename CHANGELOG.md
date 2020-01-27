@@ -1,5 +1,9 @@
 # Changes
 
+## 0.6.0
+
+- Refactor source template examples to come from `spectacle` and `spectacle-mdx-loader` dependencies instead of being duplicated in this project. [#26](https://github.com/FormidableLabs/spectacle-cli/pull/26)
+
 ## 0.5.1
 
 - Fix `.npmrc`, removing unneeded examples. [#24](https://github.com/FormidableLabs/spectacle-cli/issues/24)
