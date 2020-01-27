@@ -5297,20 +5297,20 @@ spdy@^4.0.1:
     select-hose "^2.0.0"
     spdy-transport "^3.0.0"
 
-spectacle-mdx-loader@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/spectacle-mdx-loader/-/spectacle-mdx-loader-0.0.1.tgz#b0b1b3774288a5e35d335f7262bc83dd8e8fea71"
-  integrity sha512-NHIFHX73zo9Ye/dlQYAYU/ANd8sinRqQpYQHh43sBuJSY6foYod8S2N52nsqujNyb4bo+0bLOlDGXvyw+PdDqg==
+spectacle-mdx-loader@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/spectacle-mdx-loader/-/spectacle-mdx-loader-0.1.0.tgz#02bdee093225cf22c1484bbac3ddcf54b3283595"
+  integrity sha512-sn+Hax/SVYKJoiLowZx0lLtbnYNP2bpiqtt1/kZYDSGEC6PXoNMIaiQnoFZ5GxnIBpTLivLrBECK8qOkpcOEdQ==
   dependencies:
     "@mdx-js/mdx" "^1.5.3"
     gray-matter "^4.0.2"
     loader-utils "^1.2.3"
     normalize-newline "^3.0.0"
 
-spectacle@6.0.0-alpha.3:
-  version "6.0.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/spectacle/-/spectacle-6.0.0-alpha.3.tgz#15cbeeadd7044b30b4975c7dd96d81e971517fae"
-  integrity sha512-EGkqF3f81Z74ZBQdRN5GXtJhSiKOtO4kAyJ3ea5EJTeovtyZHAm+KKEJwmtrVWpnQlboQRggxpfZ8wUFH/NWsA==
+spectacle@^6.0.0-alpha:
+  version "6.0.0-alpha.6"
+  resolved "https://registry.yarnpkg.com/spectacle/-/spectacle-6.0.0-alpha.6.tgz#c3ea0b468a58c5a40daaf8b9e8d7b11cf4fc0553"
+  integrity sha512-PdyUmGhIEtnsteUEeuN7aYcO2v0lZHM8syuHuaX7+ODAy7mDfS94G1hADTlKOjUvj+XsbdDSsoCfm93depROpw==
   dependencies:
     history "^4.9.0"
     marksy "^8.0.0"
