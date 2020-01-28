@@ -1,5 +1,9 @@
 # Changes
 
+## 0.6.1
+
+- Fix `template` and `theme` options with empty defaults. [#27](https://github.com/FormidableLabs/spectacle-cli/pull/27)
+
 ## 0.6.0
 
 - Refactor source template examples to come from `spectacle` and `spectacle-mdx-loader` dependencies instead of being duplicated in this project. [#26](https://github.com/FormidableLabs/spectacle-cli/pull/26)
