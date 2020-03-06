@@ -1,6 +1,6 @@
 # Changes
 
-## UNRELEASED
+## 0.6.2
 
 - Update to `spectacle@6`.
 
