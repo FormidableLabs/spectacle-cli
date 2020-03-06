@@ -5302,10 +5302,10 @@ spdy@^4.0.1:
     select-hose "^2.0.0"
     spdy-transport "^3.0.0"
 
-spectacle-mdx-loader@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/spectacle-mdx-loader/-/spectacle-mdx-loader-0.1.0.tgz#02bdee093225cf22c1484bbac3ddcf54b3283595"
-  integrity sha512-sn+Hax/SVYKJoiLowZx0lLtbnYNP2bpiqtt1/kZYDSGEC6PXoNMIaiQnoFZ5GxnIBpTLivLrBECK8qOkpcOEdQ==
+spectacle-mdx-loader@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/spectacle-mdx-loader/-/spectacle-mdx-loader-0.1.1.tgz#c2208c0e06896dd8b36bfc79357a3e69f06e782b"
+  integrity sha512-aa6Wuis5/cpA9OjfOfIwGNzhWoqlr92hcAppc3z9FSUiHixW5Fs5WGwqMsvAoh2SsxLUlf5IiwT3L0KwmOicAg==
   dependencies:
     "@mdx-js/mdx" "^1.5.3"
     gray-matter "^4.0.2"

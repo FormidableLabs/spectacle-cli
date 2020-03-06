@@ -77,7 +77,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "spectacle": "^6.0.0",
-    "spectacle-mdx-loader": "^0.1.0",
+    "spectacle-mdx-loader": "^0.1.1",
     "validate-npm-package-name": "^3.0.0",
     "webpack": "^4.41.4",
     "webpack-cli": "^3.3.10",
