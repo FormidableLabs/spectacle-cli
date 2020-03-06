@@ -990,6 +990,11 @@ braces@^2.3.1, braces@^2.3.2:
     split-string "^3.0.2"
     to-regex "^3.0.1"
 
+broadcastchannel-polyfill@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/broadcastchannel-polyfill/-/broadcastchannel-polyfill-1.0.0.tgz#3596eb8143d2446b349430fe6f146b6463902042"
+  integrity sha512-tYZ4RhUbWiK9XInSgTEWLzsVi2rERw2AQiPUPvpsXnuV8oNcceWPQJ58eSurQTZ+W3FQiVgp7hooMPlT+DDueA==
+
 brorand@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/brorand/-/brorand-1.1.0.tgz#12c25efe40a45e3c323eb8675a0a0ce57b22371f"
@@ -5297,21 +5302,22 @@ spdy@^4.0.1:
     select-hose "^2.0.0"
     spdy-transport "^3.0.0"
 
-spectacle-mdx-loader@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/spectacle-mdx-loader/-/spectacle-mdx-loader-0.1.0.tgz#02bdee093225cf22c1484bbac3ddcf54b3283595"
-  integrity sha512-sn+Hax/SVYKJoiLowZx0lLtbnYNP2bpiqtt1/kZYDSGEC6PXoNMIaiQnoFZ5GxnIBpTLivLrBECK8qOkpcOEdQ==
+spectacle-mdx-loader@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/spectacle-mdx-loader/-/spectacle-mdx-loader-0.1.1.tgz#c2208c0e06896dd8b36bfc79357a3e69f06e782b"
+  integrity sha512-aa6Wuis5/cpA9OjfOfIwGNzhWoqlr92hcAppc3z9FSUiHixW5Fs5WGwqMsvAoh2SsxLUlf5IiwT3L0KwmOicAg==
   dependencies:
     "@mdx-js/mdx" "^1.5.3"
     gray-matter "^4.0.2"
     loader-utils "^1.2.3"
     normalize-newline "^3.0.0"
 
-spectacle@^6.0.0-alpha:
-  version "6.0.0-alpha.6"
-  resolved "https://registry.yarnpkg.com/spectacle/-/spectacle-6.0.0-alpha.6.tgz#c3ea0b468a58c5a40daaf8b9e8d7b11cf4fc0553"
-  integrity sha512-PdyUmGhIEtnsteUEeuN7aYcO2v0lZHM8syuHuaX7+ODAy7mDfS94G1hADTlKOjUvj+XsbdDSsoCfm93depROpw==
+spectacle@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/spectacle/-/spectacle-6.0.0.tgz#cd86350ad70b05bf752754a07b42773ca48a1a3c"
+  integrity sha512-96uUpPx8A6ch5YEzKafoHi95tpqfysP2Bk6vahTZQmzYlpda+1C6ySKCOJbsXEsne+iiiZHl2pcD7OHAy+6Sgw==
   dependencies:
+    broadcastchannel-polyfill "^1.0.0"
     history "^4.9.0"
     marksy "^8.0.0"
     normalize-newline "^3.0.0"

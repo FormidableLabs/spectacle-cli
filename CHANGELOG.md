@@ -1,5 +1,9 @@
 # Changes
 
+## UNRELEASED
+
+- Update to `spectacle@6`.
+
 ## 0.6.1
 
 - Fix `template` and `theme` options with empty defaults. [#27](https://github.com/FormidableLabs/spectacle-cli/pull/27)
