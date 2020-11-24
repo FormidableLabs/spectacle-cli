@@ -79,7 +79,7 @@ const parse = async argv => {
       `Only .md,.mdx files are supported for --src. Found: "${src}"`
     );
   }
-  const srcFilePath = path.resolve(src);
+  const srcFilePath = path.normalize(path.resolve(src));
   const srcExists = await pathExists(srcFilePath);
   if (!srcExists) {
     throw new Error(`Source file "${srcFilePath}" not found.`);
