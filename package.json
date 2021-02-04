@@ -1,14 +1,14 @@
 {
   "name": "spectacle-cli",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "CLI for the Spectacle Presentation Framework",
   "engines": {
     "node": ">=10"
   },
   "bin": {
-    "spectacle": "./bin/spectacle/cli.js",
-    "spectacle-cli": "./bin/spectacle/cli.js",
-    "spectacle-boilerplate": "./bin/boilerplate/cli.js"
+    "spectacle": "bin/spectacle/cli.js",
+    "spectacle-cli": "bin/spectacle/cli.js",
+    "spectacle-boilerplate": "bin/boilerplate/cli.js"
   },
   "scripts": {
     "preversion": "yarn run check",
