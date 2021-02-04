@@ -1,5 +1,9 @@
 # Changes
 
+## 0.6.3
+
+- Update to `spectacle@7`.
+
 ## 0.6.2
 
 - Update to `spectacle@6`.
