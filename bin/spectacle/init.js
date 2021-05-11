@@ -16,9 +16,11 @@ const questions = [
   {
     type: 'text',
     name: 'Filename of markdown source',
-    message: 'What is the filename of the markdown source?'
-    // TODO below
-    // validate: 'Ensure the file has either a md or mdx extension'
+    message: 'What is the filename of the markdown source?',
+    validate: name =>
+      name.includes('.md' || '.mdx')
+        ? true
+        : 'The file must be a mdx or md file'
   },
   {
     type: 'confirm',
@@ -29,9 +31,12 @@ const questions = [
   {
     type: 'text',
     name: 'Custom Theme File name',
-    message: 'What is the filename of the custom theme file?'
+    message: 'What is the filename of the custom theme file?',
     // TODO : Only ask this question if 3 got a yes
-    // validate: 'Ensure the file has either a json or js extension'
+    validate: name =>
+      name.includes('.js' || '.json')
+        ? true
+        : 'The file must be a js or json file'
   },
   {
     type: 'confirm',
@@ -42,21 +47,24 @@ const questions = [
   {
     type: 'text',
     name: 'Custom Template File name',
-    message: 'What is the filename of the custom template file?'
-    // TODO : Only ask this question if 5 got a yes
-    // validate: 'Ensure the file has either a jsx or js extension'
+    message: 'What is the filename of the custom template file?',
+    // TODO : Only ask this question if 5 got a yes, 'Ensure the file has either a jsx or js extension'
+    validate: name =>
+      name.includes('.js' || '.jsx')
+        ? true
+        : 'The file must be a jsx or js file'
   },
-  {
+  { // TODO figure out why the prompt fails here
+    // TODO Only ask this question if 1 was the server option
     type: 'number',
     name: 'Port',
     message: 'What port for the live server?',
-    // TODO below
-    validate: value =>
-      value.length === '4' ? 'The port must be 4 numbers' : true
+    validate: port =>
+      port.toString().length === '4' ? true : 'The port must be 4 numbers'
   }
 ];
 
 (async () => {
   const response = await prompts(questions);
-  console.log(response); // => { value: 24 }
+  console.log(response);
 })();
