@@ -49,9 +49,10 @@ const questions = [
   {
     type: 'number',
     name: 'Port',
-    message: 'What port for the live server?'
+    message: 'What port for the live server?',
     // TODO below
-    // validate: 'Ensure the response is a 4-digit number'
+    validate: value =>
+      value.length === '4' ? 'The port must be 4 numbers' : true
   }
 ];
 
