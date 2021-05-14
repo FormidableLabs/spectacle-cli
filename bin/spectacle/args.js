@@ -9,8 +9,10 @@ const actions = require('../../lib/spectacle/actions');
 const ACTIONS = Object.keys(actions);
 
 // Produce args object.
-const args = () =>
-  yargs
+const args = () => {
+  console.log("TODO args -- process.argv", process.argv);
+
+  const vals = yargs
     .usage('Usage: spectacle -s <file>')
 
     // Substantive
@@ -63,6 +65,11 @@ const args = () =>
     .alias('version', 'v')
     .strict().argv;
 
+  console.log("TODO args -- vals", vals);
+
+  return vals;
+}
+
 // Validate and further transform args.
 // eslint-disable-next-line max-statements
 const parse = async argv => {
@@ -104,6 +111,9 @@ const parse = async argv => {
     }
   }
 
+  // TODO: export `parse()` function needs to return something that:
+  // 1. Looks like the below
+  // 2. Is validated for file paths, etc. per above
   return {
     action,
     port,
@@ -115,5 +125,20 @@ const parse = async argv => {
 };
 
 module.exports = {
-  parse: () => parse(args())
+  parse: () => {
+    // TODO: Other options is just _replace_ the call to `args()` with a full
+    // substitute and you manually create an equivalent.
+    const parsedArgs = args();
+    // OPTION 2: const parsedArgs = USE_PROMPT_OR_CONFIG ? promptOrConfig() : args();
+
+    // TODO: Here might be a good place to override stuff passed to the CLI
+    // with other values from prompts, or config files, etc.
+    console.log("TODO parse -- parsedArgs", parsedArgs);
+    // OPTION 1: Object.assign(parsedArgs, newStuffFromPrompt);
+
+    return parse(parsedArgs);
+
+    // OPTION 3: Replace `parse` entirely and just return the same object shape.
+    // return USE_PROMPT_OR_CONFIG ? myParseEquivalentFromPrompt() : args();
+  }
 };
