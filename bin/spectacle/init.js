@@ -12,7 +12,7 @@ const jsxRegex = /(\.jsx$|\.js$)/gm;
 const questions = [
   {
     type: 'select',
-    name: 'Server or Build',
+    name: 'action',
     message: 'Create a live server or build directory?',
     choices: [
       { title: 'Server', value: 'server' },
@@ -21,7 +21,7 @@ const questions = [
   },
   {
     type: prev => (prev === 'server' ? 'number' : null),
-    name: 'Port',
+    name: 'port',
     message: 'What port for the live server?',
     validate: val => {
       const numLength = val.toString().length;
@@ -34,7 +34,7 @@ const questions = [
   },
   {
     type: 'text',
-    name: 'Filename of markdown source',
+    name: 'src',
     message:
       'What is the filename of the markdown source? Include the file extension',
     validate: name =>
@@ -42,14 +42,14 @@ const questions = [
   },
   {
     type: 'confirm',
-    name: 'Custom Theme File',
+    name: 'custom_theme',
     message: 'Do you have a custom theme file?',
     initial: false
   },
   {
     // eslint-disable-next-line no-constant-condition
     type: prev => (prev === 'y' || prev === 'yes' ? 'text' : null),
-    name: 'Custom Theme File name',
+    name: 'theme',
     message:
       'What is the name of the custom theme file? Include the file extension',
     validate: name =>
@@ -57,14 +57,14 @@ const questions = [
   },
   {
     type: 'confirm',
-    name: 'Custom Template File',
+    name: 'custom_template',
     message: 'Do you have a custom template file?',
     initial: false
   },
   {
     // eslint-disable-next-line no-constant-condition
     type: prev => (prev === 'y' || prev === 'yes' ? 'text' : null),
-    name: 'Custom Template File name',
+    name: 'template',
     message:
       'What is the name of the custom template file? Include the file extension.',
     validate: name =>
@@ -72,7 +72,15 @@ const questions = [
   }
 ];
 
-(async () => {
-  const response = await prompts(questions);
-  console.log(response);
+const promptArgs = (async() => {
+  try {
+    const response = await prompts(questions);
+    const { action, src, theme, port, template }  = response;
+    return { action, src, theme, port, template }
+  }catch(e){
+    console.error(`Error, ${e}`);
+  }
 })();
+
+exports.promptArgs = promptArgs;
+

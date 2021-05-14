@@ -7,8 +7,10 @@ const yargs = require('yargs');
 const { pathExists } = require('fs-extra');
 const actions = require('../../lib/spectacle/actions');
 const ACTIONS = Object.keys(actions);
-
+const init = require('./init');
 // Produce args object.
+
+
 const args = () =>
   yargs
     .usage('Usage: spectacle -s <file>')
@@ -68,6 +70,8 @@ const args = () =>
 const parse = async argv => {
   const { action, src, theme, port, title, template } = argv;
 
+  console.log(init.promptArgs);
+
   // Action.
   if (!actions[action]) {
     throw new Error(`Unknown action: "${action}"`);
@@ -115,5 +119,8 @@ const parse = async argv => {
 };
 
 module.exports = {
-  parse: () => parse(args())
+  parse: async () => {
+    const parsedArgs = await init.promptArgs? await init.promptArgs : args();
+   return parse(parsedArgs);
+  }
 };
