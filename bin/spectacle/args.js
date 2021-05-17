@@ -7,9 +7,8 @@ const yargs = require('yargs');
 const { pathExists } = require('fs-extra');
 const actions = require('../../lib/spectacle/actions');
 const ACTIONS = Object.keys(actions);
-const init = require('./init');
+const promptArgs = require('./init');
 // Produce args object.
-
 
 const args = () =>
   yargs
@@ -118,7 +117,8 @@ const parse = async argv => {
 
 module.exports = {
   parse: async () => {
-    const parsedArgs = await init.promptArgs? await init.promptArgs : args();
-   return parse(parsedArgs);
+    const promptResponse = await promptArgs.promptArgs;
+    const parsedArgs = promptResponse ? promptResponse : args();
+    return parse(parsedArgs);
   }
 };
