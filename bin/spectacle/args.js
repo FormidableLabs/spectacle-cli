@@ -70,8 +70,6 @@ const args = () =>
 const parse = async argv => {
   const { action, src, theme, port, title, template } = argv;
 
-  console.log(init.promptArgs);
-
   // Action.
   if (!actions[action]) {
     throw new Error(`Unknown action: "${action}"`);
