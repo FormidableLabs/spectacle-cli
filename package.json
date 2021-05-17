@@ -42,8 +42,7 @@
     "start": "yarn start:cli-mdx",
     "lint": "eslint .",
     "check": "yarn lint",
-    "check:ci": "yarn run check",
-    "spec-init": "cd bin/spectacle && node init.js"
+    "check:ci": "yarn run check"
   },
   "license": "MIT",
   "repository": {
@@ -73,7 +72,7 @@
     "file-loader": "^5.0.2",
     "fs-extra": "^8.1.0",
     "html-webpack-plugin": "^3.2.0",
-    "prompts": "^2.4.1",
+    "prompts": "^2.4.0",
     "prop-types": "^15.7.2",
     "raw-loader": "^4.0.0",
     "react": "^17.0.1",

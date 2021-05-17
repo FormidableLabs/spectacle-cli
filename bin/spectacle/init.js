@@ -48,7 +48,7 @@ const questions = [
   },
   {
     // eslint-disable-next-line no-constant-condition
-    type: prev => (prev === 'y' || prev === 'yes' ? 'text' : null),
+    type: prev => (prev ? 'text' : null),
     name: 'theme',
     message:
       'What is the name of the custom theme file? Include the file extension',
@@ -63,7 +63,7 @@ const questions = [
   },
   {
     // eslint-disable-next-line no-constant-condition
-    type: prev => (prev === 'y' || prev === 'yes' ? 'text' : null),
+    type: prev => (prev ? 'text' : null),
     name: 'template',
     message:
       'What is the name of the custom template file? Include the file extension.',
@@ -78,7 +78,7 @@ const promptArgs = (async() => {
     const { action, src, theme, port, template }  = response;
     return { action, src, theme, port, template }
   }catch(e){
-    console.error(`Error, ${e}`);
+    throw new Error(`Error, ${e}`);
   }
 })();
 
