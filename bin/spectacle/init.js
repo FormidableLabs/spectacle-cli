@@ -7,6 +7,7 @@ const prompts = require('prompts');
 const mdRegex = /(\.mdx$|\.md$)/gm;
 const jsRegex = /(\.json$|\.js$)/gm;
 const jsxRegex = /(\.jsx$|\.js$)/gm;
+const { pathExists } = require('fs-extra');
 
 const questions = [
   {
@@ -35,9 +36,14 @@ const questions = [
     type: 'text',
     name: 'src',
     message:
-      'What is the filename of the markdown source? Include the file extension',
-    validate: name =>
-      name.match(mdRegex) ? true : 'The file must be a mdx or md file'
+      'What is the file directory of the markdown source? Include the file extension',
+    validate: async filepath => {
+      const filePathExists = await pathExists(filepath);
+      if (!filePathExists || !filepath.match(mdRegex)) {
+        return 'Error, cannot find that file at the path specified. The file must have a .md or .mdx extension.';
+      }
+      return filePathExists && filepath.match(mdRegex);
+    }
   },
   {
     type: 'confirm',
@@ -50,9 +56,14 @@ const questions = [
     type: prev => (prev ? 'text' : null),
     name: 'theme',
     message:
-      'What is the name of the custom theme file? Include the file extension',
-    validate: name =>
-      name.match(jsRegex) ? true : 'The file must be a js or json file'
+      'What is the file directory of the custom theme file? Include the file extension',
+    validate: async filepath => {
+      const filePathExists = await pathExists(filepath);
+      if (!filePathExists || !filepath.match(jsRegex)) {
+        return 'Error, cannot find that file at the path specified. The file must have a .js or .json extension.';
+      }
+      return filePathExists && filepath.match(mdRegex);
+    }
   },
   {
     type: 'confirm',
@@ -65,9 +76,14 @@ const questions = [
     type: prev => (prev ? 'text' : null),
     name: 'template',
     message:
-      'What is the name of the custom template file? Include the file extension.',
-    validate: name =>
-      name.match(jsxRegex) ? true : 'The file must be a jsx or js file'
+      'What is the file directory of the custom template file? Include the file extension.',
+    validate: async filepath => {
+      const filePathExists = await pathExists(filepath);
+      if (!filePathExists || !filepath.match(jsxRegex)) {
+        return 'Error, cannot find that file at the path specified. The file must have a .js or .jsx extension.';
+      }
+      return filePathExists && filepath.match(mdRegex);
+    }
   }
 ];
 
