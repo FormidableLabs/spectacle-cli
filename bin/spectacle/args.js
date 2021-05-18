@@ -67,7 +67,7 @@ const args = async () =>
 // eslint-disable-next-line max-statements
 const parse = async argv => {
   const { action, src, theme, port, title, template } = argv;
-console.log("************************* ", title);
+
   // Action.
   if (!actions[action]) {
     throw new Error(`Unknown action: "${action}"`);

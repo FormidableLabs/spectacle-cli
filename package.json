@@ -8,8 +8,7 @@
   "bin": {
     "spectacle": "bin/spectacle/cli.js",
     "spectacle-cli": "bin/spectacle/cli.js",
-    "spectacle-boilerplate": "bin/boilerplate/cli.js",
-    "spectacle-cli init": "bin/spectacle/cli.js"
+    "spectacle-boilerplate": "bin/boilerplate/cli.js"
   },
   "scripts": {
     "preversion": "yarn run check",
