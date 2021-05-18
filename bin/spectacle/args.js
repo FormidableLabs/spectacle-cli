@@ -10,9 +10,16 @@ const ACTIONS = Object.keys(actions);
 const promptArgs = require('./init');
 // Produce args object.
 
-const args = () =>
+const args = async () =>
   yargs
     .usage('Usage: spectacle -s <file>')
+      .option('init',{
+        alias: 'i',
+        describe: 'Initiate the Spectacle workflow to create a presentation.',
+       //return the prompt?
+         default: () => await promptArgs(),
+          type: 'array'
+      })
 
     // Substantive
     .option('action', {
@@ -68,7 +75,7 @@ const args = () =>
 // eslint-disable-next-line max-statements
 const parse = async argv => {
   const { action, src, theme, port, title, template } = argv;
-
+console.log(argv)
   // Action.
   if (!actions[action]) {
     throw new Error(`Unknown action: "${action}"`);
@@ -117,8 +124,9 @@ const parse = async argv => {
 
 module.exports = {
   parse: async () => {
-    const promptResponse = await promptArgs.promptArgs;
-    const parsedArgs = promptResponse ? promptResponse : args();
-    return parse(parsedArgs);
+console.log(args())
+    //if init then prompt response
+    // const parsedArgs = isInit ? promptArgs() : args();
+    return parse(args());
   }
 };

@@ -3,6 +3,7 @@
 'use strict';
 
 const prompts = require('prompts');
+const parse = require('./args');
 
 const mdRegex = /(\.mdx$|\.md$)/gm;
 const jsRegex = /(\.json$|\.js$)/gm;
@@ -71,7 +72,7 @@ const questions = [
   }
 ];
 
-const promptArgs = (async () => {
+async function promptArgs(){
   try {
     const response = await prompts(questions);
     const { action, src, theme, port, template } = response;
@@ -79,6 +80,6 @@ const promptArgs = (async () => {
   } catch (e) {
     throw new Error(`Error, ${e}`);
   }
-})();
+};
 
 module.exports = { promptArgs };
