@@ -7,19 +7,11 @@ const yargs = require('yargs');
 const { pathExists } = require('fs-extra');
 const actions = require('../../lib/spectacle/actions');
 const ACTIONS = Object.keys(actions);
-const promptArgs = require('./init');
-// Produce args object.
+const { promptArgs } = require('./init');
 
 const args = async () =>
   yargs
     .usage('Usage: spectacle -s <file>')
-      .option('init',{
-        alias: 'i',
-        describe: 'Initiate the Spectacle workflow to create a presentation.',
-       //return the prompt?
-         default: () => await promptArgs(),
-          type: 'array'
-      })
 
     // Substantive
     .option('action', {
@@ -75,7 +67,7 @@ const args = async () =>
 // eslint-disable-next-line max-statements
 const parse = async argv => {
   const { action, src, theme, port, title, template } = argv;
-console.log(argv)
+
   // Action.
   if (!actions[action]) {
     throw new Error(`Unknown action: "${action}"`);
@@ -124,9 +116,14 @@ console.log(argv)
 
 module.exports = {
   parse: async () => {
-console.log(args())
-    //if init then prompt response
-    // const parsedArgs = isInit ? promptArgs() : args();
-    return parse(args());
+    const parsedArgs = await args();
+
+    // Infer init mode directly off of remaining CLI arguments.
+    const isInit = parsedArgs._.includes('init');
+    if (isInit) {
+      Object.assign(parsedArgs, await promptArgs());
+    }
+
+    return parse(parsedArgs);
   }
 };
