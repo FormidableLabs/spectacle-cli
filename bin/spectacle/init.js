@@ -24,12 +24,11 @@ const questions = [
     name: 'port',
     message: 'What port for the live server?',
     validate: val => {
-      const numLength = val.toString().length;
       // eslint-disable-next-line no-magic-numbers
-      if (numLength > 0) {
-        return val;
+      if (val > 0) {
+        return true;
       }
-      return 'The port should be 4 numbers';
+      return 'The port should be a positive integer';
     }
   },
   {
@@ -42,7 +41,7 @@ const questions = [
       if (!filePathExists || !filepath.match(mdRegex)) {
         return 'Error, cannot find that file at the path specified. The file must have a .md or .mdx extension.';
       }
-      return filePathExists && filepath.match(mdRegex);
+      return true;
     }
   },
   {

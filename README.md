@@ -48,8 +48,7 @@ Options:
                                                         [number] [default: 3000]
   --output, -o    Output directory for built files.   [string] [default: "dist"]
 ```
-
-Some additional for CLI usage with flags:
+Some additional tips for CLI usage with flags:
 
 - _File paths_: all file paths are relative to current working directory (`process.cwd()`) or can be absolute.
 - `-a|--action`:
