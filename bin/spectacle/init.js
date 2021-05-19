@@ -13,7 +13,7 @@ const questions = [
   {
     type: 'select',
     name: 'action',
-    message: 'Create a live server or build directory?',
+    message: 'Create a live server or build path?',
     choices: [
       { title: 'Server', value: 'server' },
       { title: 'Build', value: 'build' }
@@ -26,7 +26,7 @@ const questions = [
     validate: val => {
       const numLength = val.toString().length;
       // eslint-disable-next-line no-magic-numbers
-      if (numLength === 4) {
+      if (numLength > 0) {
         return val;
       }
       return 'The port should be 4 numbers';
@@ -36,7 +36,7 @@ const questions = [
     type: 'text',
     name: 'src',
     message:
-      'What is the file directory of the markdown source? Include the file extension',
+      'What is the file path of the markdown source? Include the file extension',
     validate: async filepath => {
       const filePathExists = await pathExists(filepath);
       if (!filePathExists || !filepath.match(mdRegex)) {
@@ -56,13 +56,13 @@ const questions = [
     type: prev => (prev ? 'text' : null),
     name: 'theme',
     message:
-      'What is the file directory of the custom theme file? Include the file extension',
+      'What is the file path of the custom theme file? Include the file extension',
     validate: async filepath => {
       const filePathExists = await pathExists(filepath);
       if (!filePathExists || !filepath.match(jsRegex)) {
         return 'Error, cannot find that file at the path specified. The file must have a .js or .json extension.';
       }
-      return filePathExists && filepath.match(mdRegex);
+      return true;
     }
   },
   {
@@ -76,13 +76,13 @@ const questions = [
     type: prev => (prev ? 'text' : null),
     name: 'template',
     message:
-      'What is the file directory of the custom template file? Include the file extension.',
+      'What is the file path of the custom template file? Include the file extension.',
     validate: async filepath => {
       const filePathExists = await pathExists(filepath);
       if (!filePathExists || !filepath.match(jsxRegex)) {
         return 'Error, cannot find that file at the path specified. The file must have a .js or .jsx extension.';
       }
-      return filePathExists && filepath.match(mdRegex);
+      return true;
     }
   }
 ];

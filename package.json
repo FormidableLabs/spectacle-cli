@@ -41,7 +41,7 @@
     "start:boilerplate": "builder concurrent --log-level=info boilerplate:start:js boilerplate:start:md boilerplate:start:mdx",
     "start": "yarn start:cli-mdx",
     "lint": "eslint .",
-    "check": "yarn lint --fix",
+    "check": "yarn lint",
     "check:ci": "yarn run check"
   },
   "license": "MIT",

@@ -2,8 +2,7 @@
 
 ## 0.6.5
 
-- Implement CLI workflow. User will use script `spectacle-cli init` to kick off the workflow to create a server or 
-  build directory.
+- Implement CLI workflow. User will use script `spectacle-cli init` to kick off the workflow to create a server or build directory.
 
 ## 0.6.4
 
