@@ -27,9 +27,15 @@ The Spectacle CLI will create a development server to create a `.md` or `.mdx` s
 
 ```sh
 $ spectacle -h
-Usage: spectacle -s <file>
+Create a Spectacle presentation
+
+Commands:
+  spectacle       Create a Spectacle presentation                      [default]
+  spectacle init  Create a Spectacle presentation via interactive prompts
 
 Options:
+  --help, -h      Show help                                            [boolean]
+  --version, -v   Show version number                                  [boolean]
   --action, -a    CLI action to run (build, server) [string] [default: "server"]
   --src, -s       Path to a file from which a presentation will be generated.
                                                 [string] [default: "slides.mdx"]
@@ -41,11 +47,8 @@ Options:
   --port, -p      Port for running the Spectacle development server.
                                                         [number] [default: 3000]
   --output, -o    Output directory for built files.   [string] [default: "dist"]
-  --help, -h      Show help                                            [boolean]
-  --version, -v   Show version number                                  [boolean]
 ```
-
-Some additional tips:
+Some additional tips for CLI usage with flags:
 
 - _File paths_: all file paths are relative to current working directory (`process.cwd()`) or can be absolute.
 - `-a|--action`:
@@ -53,6 +56,19 @@ Some additional tips:
   - `build`: Output a full production website static build to the `-o|--output` directory.
 - `-s|--src`: The slide source file path. If a file has a `.md` suffix is processed as straight Markdown. If a file has a `.mdx` suffix it is processed as enhanced MDX.
 - `-t|--theme`: A `require|import`-able file (e.g., `.js` or `.json`) that contains an object to override the Spectacle default theme in places.
+
+An alternative to specifying all flags on the CLI is using an interactive prompt with `init`, e.g.:
+
+```sh
+$ spectacle init
+✔ Create a live server or build directory? › Server
+✔ What port for the live server? … 5555
+✔ What is the file directory of the markdown source? Include the file extension … slides.md
+✔ Do you have a custom theme file? … no
+✔ Do you have a custom template file? … no
+
+# ... and a dev server fires up!
+```
 
 ## Boilerplate generation (`spectacle-boilerplate`)
 
