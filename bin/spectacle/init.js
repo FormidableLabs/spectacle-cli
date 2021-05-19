@@ -24,7 +24,6 @@ const questions = [
     name: 'port',
     message: 'What port for the live server?',
     validate: val => {
-      // eslint-disable-next-line no-magic-numbers
       if (val > 0) {
         return true;
       }
