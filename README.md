@@ -132,3 +132,8 @@ You can find a working example in `examples/cli-mdx-babel` in the project reposi
 [trav_site]: https://travis-ci.com/FormidableLabs/spectacle-cli
 [spectacle]: https://formidable.com/open-source/spectacle/
 [npx]: https://www.npmjs.com/package/npx
+
+
+## Maintenance Status
+
+**Active:** Formidable is actively working on this project, and we expect to continue for work for the foreseeable future. Bug reports, feature requests and pull requests are welcome.
