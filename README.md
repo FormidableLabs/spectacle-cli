@@ -2,6 +2,7 @@
 
 [![npm version][npm_img]][npm_site]
 [![Travis Status][trav_img]][trav_site]
+[![Maintenance Status][maintenance-image]](#maintenance-status)
 
 A generation tool for [Spectacle][] presentation decks. Includes `spectacle` and `spectacle-boilerplate`.
 
@@ -132,6 +133,7 @@ You can find a working example in `examples/cli-mdx-babel` in the project reposi
 [trav_site]: https://travis-ci.com/FormidableLabs/spectacle-cli
 [spectacle]: https://formidable.com/open-source/spectacle/
 [npx]: https://www.npmjs.com/package/npx
+[maintenance-image]: https://img.shields.io/badge/maintenance-active-green.svg?color=brightgreen&style=flat
 
 
 ## Maintenance Status
