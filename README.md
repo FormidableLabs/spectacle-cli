@@ -1,4 +1,4 @@
-# spectacle-cli
+[![Spectacle CLI — Formidable, We build the modern web](./spectacle-cli-Hero.png)](https://formidable.com/open-source/)
 
 [![npm version][npm_img]][npm_site]
 [![Travis Status][trav_img]][trav_site]
